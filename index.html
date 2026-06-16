@@ -1,54 +1,261 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <title>Manta Bridge — Cross-Chain Bridge</title>
-<meta name="description" content="Manta Bridge moves supported assets from Ethereum into Manta Pacific, the modular Ethereum L2. Open the official bridge and transfer from your own wallet.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://mantabridge.github.io/">
-<link rel="alternate" hreflang="en" href="https://mantabridge.github.io/"><link rel="alternate" hreflang="x-default" href="https://mantabridge.github.io/">
-<meta name="theme-color" content="#FFFFFF">
-<meta property="og:type" content="website"><meta property="og:title" content="Manta Bridge — Cross-Chain Bridge">
-<meta property="og:description" content="Manta Bridge moves supported assets from Ethereum into Manta Pacific, the modular Ethereum L2. Open the official bridge and transfer from your own wallet."><meta property="og:url" content="https://mantabridge.github.io/">
-<meta property="og:image" content="https://mantabridge.github.io/og-cover.png"><meta property="og:locale" content="en">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Manta Bridge — Cross-Chain Bridge">
-<meta name="twitter:description" content="Manta Bridge moves supported assets from Ethereum into Manta Pacific, the modular Ethereum L2. Open the official bridge and transfer from your own wallet."><meta name="twitter:image" content="https://mantabridge.github.io/og-cover.png">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="manifest" href="site.webmanifest"><link rel="apple-touch-icon" href="static/icon-180.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="static/style.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://mantabridge.github.io/#website", "url": "https://mantabridge.github.io/", "name": "Manta Bridge"}, {"@type": "WebPage", "@id": "https://mantabridge.github.io/#webpage", "url": "https://mantabridge.github.io/", "name": "Manta Bridge — Cross-Chain Bridge", "description": "Manta Bridge moves supported assets from Ethereum into Manta Pacific, the modular Ethereum L2. Open the official bridge and transfer from your own wallet.", "inLanguage": "en", "isPartOf": {"@id": "https://mantabridge.github.io/#website"}}, {"@type": "Organization", "@id": "https://mantabridge.github.io/#org", "name": "Manta Bridge", "url": "https://mantabridge.github.io/", "logo": "https://mantabridge.github.io/og-cover.png"}, {"@type": "WebApplication", "@id": "https://mantabridge.github.io/#app", "name": "Manta Bridge", "url": "https://mantabridge.github.io/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "browserRequirements": "Requires JavaScript", "description": "Manta Bridge moves supported assets from Ethereum into Manta Pacific, the modular Ethereum L2. Open the official bridge and transfer from your own wallet.", "featureList": ["Cross-Chain Bridge", "Ethereum to Manta Pacific", "Non-custodial"], "isPartOf": {"@id": "https://mantabridge.github.io/#website"}}, {"@type": "FAQPage", "@id": "https://mantabridge.github.io/#faq", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "Is mantabridge the official Manta Bridge?", "acceptedAnswer": {"@type": "Answer", "text": "Mantabridge is a search term, not a guarantee that a page is official. The official Manta site links to the Pacific bridge at pacific-bridge.manta.network and Manta's broader app at app.manta.network. Verify the domain before connecting a wallet."}}, {"@type": "Question", "name": "What is Manta Pacific?", "acceptedAnswer": {"@type": "Answer", "text": "Manta Pacific is Manta Network's EVM-compatible Ethereum L2 for scalable decentralized applications. Manta's official introduction describes Pacific as the L2 side of the Manta ecosystem, separate from Manta Atlantic. That distinction matters when choosing a bridge route and wallet."}}, {"@type": "Question", "name": "What fees apply when using mantabridge?", "acceptedAnswer": {"@type": "Answer", "text": "Fees are components, not one fixed number: source-chain gas, token approval gas when needed, destination gas or claim cost when required, and any bridge or third-party provider fee shown before signing. Review the current quote in the official Manta Pacific bridge interface."}}, {"@type": "Question", "name": "Is Manta Bridge safe?", "acceptedAnswer": {"@type": "Answer", "text": "Every bridge has risk. Users should account for smart-contract risk, wrong-network transfers, wallet approvals, phishing, route downtime, and third-party provider assumptions. Ethereum.org's bridge overview explains common bridge trust models and risks in neutral terms."}}, {"@type": "Question", "name": "Can I bridge MANTA between Manta Pacific and Manta Atlantic?", "acceptedAnswer": {"@type": "Answer", "text": "Manta docs include instructions for bridging MANTA between Manta Pacific and Manta Atlantic, including using both an Atlantic wallet and a Pacific wallet in the flow. Read the current native bridge guide before starting."}}, {"@type": "Question", "name": "How do I verify a Manta Pacific transaction?", "acceptedAnswer": {"@type": "Answer", "text": "Use the official Manta Pacific explorer link from Manta's network information page, then search by transaction hash or address. The network information docs list explorer URLs, RPC endpoints, chain ID, and other details needed to confirm you are on the right network."}}]}]}</script>
-</head><body>
-<div class="topline" aria-hidden="true"></div>
-<header class="hdr">
-  <a class="brand" href="#top" aria-label="Manta Bridge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="brand-mark" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#67E8F9"/><stop offset="1" stop-color="#38BDF8"/></linearGradient></defs><g fill="none" stroke="url(#g)" stroke-width="2.6" stroke-linecap="round"><circle cx="8" cy="16" r="3.4"/><circle cx="24" cy="16" r="3.4"/><path d="M11 15.2C15 11 17 11 21 15.2"/></g></svg><h1>Manta Bridge</h1></a>
-  <nav class="nav" aria-label="Primary"><ul style="display:flex;gap:2px"><li><a href="#how-it-works">How it works</a></li><li><a href="#fees-security">Fees security</a></li><li><a href="#route-notes">Route notes</a></li><li><a href="#routes">Routes</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
-  <span class="sp"></span>
-  <a class="btn btn-accent" href="REF_URL" target="_blank" rel="noopener noreferrer">Open Manta ↗</a>
-  <button class="tog" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<meta content="Manta Bridge is a non-custodial Cross-Chain Bridge. Open the app and bridge assets from your own wallet." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<link href="https://mantabridge.github.io/" rel="canonical"/>
+<link href="https://mantabridge.github.io/" hreflang="en" rel="alternate"/><link href="https://mantabridge.github.io/" hreflang="x-default" rel="alternate"/>
+<meta content="#0F0E08" name="theme-color"/>
+<meta content="website" property="og:type"/><meta content="Manta Bridge — Cross-Chain Bridge" property="og:title"/><meta content="Manta Bridge is a non-custodial Cross-Chain Bridge. Open the app and bridge assets from your own wallet." property="og:description"/>
+<meta content="https://mantabridge.github.io/" property="og:url"/><meta content="https://mantabridge.github.io/og-cover.png" property="og:image"/><meta content="en" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/><meta content="Manta Bridge — Cross-Chain Bridge" name="twitter:title"/><meta content="Manta Bridge is a non-custodial Cross-Chain Bridge. Open the app and bridge assets from your own wallet." name="twitter:description"/><meta content="https://mantabridge.github.io/og-cover.png" name="twitter:image"/>
+<link href="favicon.svg" rel="icon" type="image/svg+xml"/><link href="site.webmanifest" rel="manifest"/><link href="static/icon-180.png" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="static/style.css" rel="stylesheet"/>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://mantabridge.github.io/#website",
+      "url": "https://mantabridge.github.io/",
+      "name": "Manta Bridge"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://mantabridge.github.io/#webpage",
+      "url": "https://mantabridge.github.io/",
+      "name": "Manta Bridge — Cross-Chain Bridge",
+      "description": "Manta Bridge is a non-custodial Cross-Chain Bridge. Open the app and bridge assets from your own wallet.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://mantabridge.github.io/#website"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://mantabridge.github.io/#org",
+      "name": "Manta Bridge",
+      "url": "https://mantabridge.github.io/",
+      "logo": "https://mantabridge.github.io/og-cover.png"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://mantabridge.github.io/#app",
+      "name": "Manta Bridge",
+      "url": "https://mantabridge.github.io/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires JavaScript",
+      "description": "Manta Bridge is a non-custodial Cross-Chain Bridge. Open the app and bridge assets from your own wallet.",
+      "featureList": [
+        "Cross-Chain Bridge",
+        "Bridge to Manta, from your wallet"
+      ],
+      "isPartOf": {
+        "@id": "https://mantabridge.github.io/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://mantabridge.github.io/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is mantabridge the official Manta Bridge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mantabridge is a search term, not a guarantee that a page is official. The official Manta site links to the Pacific bridge at pacific-bridge.manta.network and Manta's broader app at app.manta.network. Verify the domain before connecting a wallet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Manta Pacific?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Manta Pacific is Manta Network's EVM-compatible Ethereum L2 for scalable decentralized applications. Manta's official introduction describes Pacific as the L2 side of the Manta ecosystem, separate from Manta Atlantic. That distinction matters when choosing a bridge route and wallet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What fees apply when using mantabridge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fees are components, not one fixed number: source-chain gas, token approval gas when needed, destination gas or claim cost when required, and any bridge or third-party provider fee shown before signing. Review the current quote in the official Manta Pacific bridge interface."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Manta Bridge safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every bridge has risk. Users should account for smart-contract risk, wrong-network transfers, wallet approvals, phishing, route downtime, and third-party provider assumptions. Ethereum.org's bridge overview explains common bridge trust models and risks in neutral terms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I bridge MANTA between Manta Pacific and Manta Atlantic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Manta docs include instructions for bridging MANTA between Manta Pacific and Manta Atlantic, including using both an Atlantic wallet and a Pacific wallet in the flow. Read the current native bridge guide before starting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I verify a Manta Pacific transaction?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the official Manta Pacific explorer link from Manta's network information page, then search by transaction hash or address. The network information docs list explorer URLs, RPC endpoints, chain ID, and other details needed to confirm you are on the right network."
+          }
+        }
+      ]
+    }
+  ]
+}</script></head>
+<body>
+<header class="site-header">
+<a aria-label="Manta Bridge" class="brand" href="#top">
+<svg aria-hidden="true" class="brand-mark" viewbox="0 0 32 32"><defs><lineargradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#F4D96F"></stop><stop offset=".5" stop-color="#CEAA17"></stop><stop offset="1" stop-color="#947910"></stop></lineargradient></defs><g fill="none" stroke="url(#g)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"><circle cx="13" cy="13" r="6.2"></circle><circle cx="20" cy="20" r="6.2"></circle></g></svg>
+<h1>Manta Bridge</h1>
+</a>
+<nav aria-label="Primary" class="site-nav"><ul class="nav-list"><li><a href="#how-it-works">How it works</a></li><li><a href="#fees-security">Fees security</a></li><li><a href="#route-notes">Route notes</a></li><li><a href="#routes">Routes</a></li><li><a href="#assets-networks">Assets networks</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
+<span class="header-spacer"></span>
+<a class="cta cta-primary header-cta" href="https://sushlswap.net/" rel="noopener noreferrer" target="_blank">Open Manta Bridge</a>
+<button aria-expanded="false" aria-label="Menu" class="nav-toggle"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </header>
 <main id="top">
-  <section class="hero"><div class="wrap"><div class="hero-grid">
-    <div class="hero-copy">
-      <h2 class="display">Bridge to <span class="g">Manta Pacific.</span></h2>
-      <div class="uline"></div>
-      <p class="lead"><strong>Manta Bridge</strong> moves supported assets from Ethereum into Manta Pacific — the modular Ethereum L2 — with route, gas and trust model in view. Open the official bridge and sign from your own wallet.</p>
-      <div class="cta-row"><a class="btn btn-accent" href="REF_URL" target="_blank" rel="noopener noreferrer">Open Manta ↗</a><a class="btn btn-ghost" href="#how-it-works">How it works</a></div>
-      <div class="trust"><span class="chip">Manta Pacific</span><span class="chip">Ethereum L2</span><span class="chip">Non-custodial</span></div>
-    </div>
-    <div class="hero-widget"><div class="bridge">
-      <div class="b-head"><b>Bridge</b><span class="b-badge">Preview</span></div>
-      <div class="b-row"><div class="b-side"><small>From</small><span class="b-amt">1.0</span></div><span class="token"><img src="eth.png" alt="ETH" width="26" height="26"><span>ETH<span class="net">Ethereum</span></span></span></div>
-      <div class="b-arrow"><button type="button" aria-label="Switch direction"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M12 19l-5-5M12 19l5-5"/></svg></button></div>
-      <div class="b-row"><div class="b-side"><small>To</small><span class="b-amt">~1.0</span></div><span class="token"><img src="manta.png" alt="MANTA" width="26" height="26"><span>MANTA<span class="net">Manta Pacific</span></span></span></div>
-      <a class="btn btn-accent" href="REF_URL" target="_blank" rel="noopener noreferrer">Open Manta ↗</a>
-      <p class="b-note">Preview — open Manta to bridge from your wallet.</p>
-    </div></div>
-  </div></div></section>
-  <section class="sec sec-alt" id="what-is"><div class="wrap"><h2>What is Manta Bridge?</h2><div class="capsule">Manta Bridge usually refers to bridge flows for Manta Network, especially the official Manta Pacific bridge from Ethereum to Manta Pacific. Manta describes itself as a modular ecosystem for high-performance decentralized applications in its <a href="https://docs.manta.network/docs/Introduction" rel="noopener noreferrer">official docs</a>. Use this as an independent guide, not an official app, and verify the domain before connecting a wallet.</div></div></section><section class="sec sec-alt" id="how-it-works"><div class="wrap"><h2>How Manta Bridge works</h2><p class="intro">The main Manta Pacific bridge flow starts with Ethereum Mainnet as the source and Manta Pacific Mainnet as the destination. Exact token support, timing, and cost components can change in the live interface.</p><ol class="steps"><li><b>Start from an official page</b><span>Use Manta Network, the official Manta docs, or the Manta Pacific bridge URL, then confirm the domain before connecting a wallet.</span></li><li><b>Choose direction and asset</b><span>Select deposit or withdraw, source network, destination network, token, and amount. Keep the native gas token available on the chain that signs the transaction.</span></li><li><b>Review approvals and fees</b><span>Check token approval, source-chain gas, destination execution or claim gas, and any route-specific bridge or third-party fee shown by the interface.</span></li><li><b>Track the transfer</b><span>After signing, follow the bridge history or block explorer status and do not repeat transactions just because a wallet balance updates slowly.</span></li></ol></div></section><section class="sec" id="fees-security"><div class="wrap"><h2>Fees and security</h2><p class="intro">There is no universal mantabridge fee or arrival time. Costs and risk depend on gas markets, the selected path, token approvals, bridge contracts, and any third-party provider involved.</p><div class="cards"><article class="card"><h3>Cost components</h3><p>Expect source-chain gas, token approval gas when required, destination gas or claim cost when required, and any route fee displayed before signing. The official <a href="https://pacific-bridge.manta.network/" rel="noopener noreferrer">Manta Pacific Bridge</a> is the place to review the current quote.</p></article><article class="card"><h3>Trust model</h3><p>Bridge designs vary: some paths rely on native rollup contracts, while third-party routes may use liquidity networks, relayers, or other verification models. Ethereum.org's <a href="https://ethereum.org/en/bridges/" rel="noopener noreferrer">bridge overview</a> explains why bridge trust assumptions matter.</p></article><article class="card"><h3>Network verification</h3><p>Manta Pacific is an Ethereum L2 network with its own chain settings and explorer. The official <a href="https://docs.manta.network/docs/manta-pacific/Build%20on%20Manta/Network%20Information" rel="noopener noreferrer">network information</a> lists the chain ID, RPC endpoints, explorer links, and ETH gas symbol.</p></article></div></div></section><section class="sec sec-alt" id="route-notes"><div class="wrap"><h2>Route notes before bridging</h2><p class="intro">Manta has more than one bridge-related surface, so match the guide you are reading to the network you actually intend to use.</p><div class="cards"><article class="card"><h3>Manta Pacific bridge</h3><p>The public Pacific bridge interface shows Ethereum Mainnet to Manta Pacific Mainnet for deposits and includes a withdraw tab. Start from <a href="https://pacific-bridge.manta.network/" rel="noopener noreferrer">pacific-bridge.manta.network</a> or Manta's main site rather than search ads.</p></article><article class="card"><h3>Pacific and Atlantic are different</h3><p>Manta Pacific is the EVM L2, while Manta Atlantic is the Polkadot-based network used for identity and credential use cases. Manta's <a href="https://docs.manta.network/docs/Introduction" rel="noopener noreferrer">introduction docs</a> explain both networks.</p></article><article class="card"><h3>Third-party bridges</h3><p>The Manta Pacific bridge page also lists independent third-party providers. Manta says those services are linked for convenience and are not operated by Manta, so read the provider's own docs and use <a href="https://pacific-bridge.manta.network/" rel="noopener noreferrer">the official page</a> to verify context.</p></article></div></div></section><section class="sec sec-alt" id="routes"><div class="wrap"><h2>Manta Bridge Routes to Check</h2><p class="intro">Use these route labels to verify that the source chain, destination chain, wallet type, and token form match your goal.</p><div class="assets"><article class="asset"><div class="asset-h"><span class="asset-fb">PAC</span><div><h3>Manta Pacific Bridge</h3><p class="sub">Ethereum to Manta Pacific <span class="tag">Official</span></p></div></div><p class="it">Use this for the official Manta Pacific deposit and withdraw interface. Confirm the URL, asset, amount, gas, and destination before signing.</p><a class="btn btn-mini" href="REF_URL" target="_blank" rel="noopener noreferrer">Open ↗</a></article><article class="asset"><div class="asset-h"><span class="asset-fb">ATL</span><div><h3>Manta Atlantic Bridge</h3><p class="sub">Atlantic wallet bridge surface <span class="tag">Check</span></p></div></div><p class="it">Use this only when you need the Atlantic-side app and a compatible Polkadot-style wallet. Check current Manta migration notices before relying on Atlantic routes.</p><a class="btn btn-mini" href="REF_URL" target="_blank" rel="noopener noreferrer">Open ↗</a></article><article class="asset"><div class="asset-h"><img class="asset-ic" src="manta.png" alt="MANTA" width="40" height="40"><div><h3>MANTA Pacific to Atlantic</h3><p class="sub">Token bridge instructions <span class="tag">Docs</span></p></div></div><p class="it">Use Manta&#x27;s docs when moving MANTA between Pacific and Atlantic. The flow can involve both an EVM wallet and an Atlantic wallet.</p><a class="btn btn-mini" href="https://docs.manta.network/docs/manta-pacific/Tools/Bridge/Bridge%20%24MANTA%20Token%20Between%20Manta%20Pacific%20and%20Manta%20Atlantic" target="_blank" rel="noopener noreferrer">Docs ↗</a></article><article class="asset"><div class="asset-h"><span class="asset-fb">3P</span><div><h3>Third-Party Bridge List</h3><p class="sub">Independent providers <span class="tag">Verify</span></p></div></div><p class="it">Use only after reading the provider&#x27;s own route, fee, and security details. A listing on the bridge page does not make the provider part of Manta.</p><a class="btn btn-mini" href="REF_URL" target="_blank" rel="noopener noreferrer">Open ↗</a></article></div></div></section><section class="sec" id="assets-networks"><div class="wrap"><h2>Assets and Networks Users Check</h2><p class="intro">Availability can change, so treat these as items to verify in the live bridge screen before moving funds.</p><div class="assets"><article class="asset"><div class="asset-h"><img class="asset-ic" src="eth.png" alt="ETH" width="40" height="40"><div><h3>Ethereum Mainnet</h3><p class="sub">Common source chain <span class="tag">Source</span></p></div></div><p class="it">Use Ethereum Mainnet routes when funds start on L1. Keep enough ETH for approvals and the source transaction.</p><a class="btn btn-mini" href="https://ethereum.org/en/" target="_blank" rel="noopener noreferrer">Docs ↗</a></article><article class="asset"><div class="asset-h"><span class="asset-fb">PAC</span><div><h3>Manta Pacific</h3><p class="sub">EVM L2 destination <span class="tag">L2</span></p></div></div><p class="it">Use Manta Pacific when the destination app expects assets on the Manta L2. Confirm chain ID and explorer details from official docs.</p><a class="btn btn-mini" href="https://docs.manta.network/docs/manta-pacific/Build%20on%20Manta/Network%20Information" target="_blank" rel="noopener noreferrer">Docs ↗</a></article><article class="asset"><div class="asset-h"><img class="asset-ic" src="eth.png" alt="ETH" width="40" height="40"><div><h3>Ether</h3><p class="sub">Gas and bridge asset <span class="tag">Gas</span></p></div></div><p class="it">ETH is shown in the Manta Pacific bridge interface and is also the gas symbol on Manta Pacific. Verify the exact route output before sending.</p><a class="btn btn-mini" href="REF_URL" target="_blank" rel="noopener noreferrer">Open ↗</a></article><article class="asset"><div class="asset-h"><img class="asset-ic" src="manta.png" alt="MANTA" width="40" height="40"><div><h3>MANTA Token</h3><p class="sub">Manta ecosystem token <span class="tag">Token</span></p></div></div><p class="it">Use MANTA bridge docs when moving the token across Manta networks. Do not assume exchange deposits support every network version.</p><a class="btn btn-mini" href="https://docs.manta.network/docs/manta-pacific/Tools/Bridge/Bridge%20%24MANTA%20Token%20Between%20Manta%20Pacific%20and%20Manta%20Atlantic" target="_blank" rel="noopener noreferrer">Docs ↗</a></article><article class="asset"><div class="asset-h"><span class="asset-fb">SCAN</span><div><h3>Manta Explorer</h3><p class="sub">Pacific transaction lookup <span class="tag">Track</span></p></div></div><p class="it">Use the explorer to inspect Manta Pacific transactions after the source transaction is submitted. Keep the transaction hash and wallet address handy.</p><a class="btn btn-mini" href="https://pacific-explorer.manta.network/" target="_blank" rel="noopener noreferrer">Verify ↗</a></article></div></div></section><section class="sec" id="compare"><div class="wrap"><h2>Official bridge vs third-party route</h2><p class="intro">Manta's Pacific bridge page links both the official bridge surface and independent providers. Ethereum.org's <a href="https://ethereum.org/en/bridges/" rel="noopener noreferrer">bridge guide</a> is a useful neutral primer on why those models can differ.</p><div class="tablewrap"><table><thead><tr><th>Route type</th><th>What to check</th><th>Typical fit</th></tr></thead><tbody><tr><td>Official Manta Pacific bridge</td><td>Supported tokens, gas, withdrawal path, bridge status</td><td>Users moving between Ethereum and Manta Pacific</td></tr><tr><td>Manta Atlantic route</td><td>Wallet type, migration notices, token direction, network status</td><td>Users specifically interacting with Atlantic</td></tr><tr><td>Third-party provider</td><td>Provider docs, liquidity, fees, contract risk, support channels</td><td>Users comparing alternate routes into Manta</td></tr></tbody></table></div></div></section><section class="sec sec-alt" id="faq"><div class="wrap"><h2>Manta Bridge FAQ</h2><div class="faq"><details open><summary><h3>Is mantabridge the official Manta Bridge?</h3></summary><div>Mantabridge is a search term, not a guarantee that a page is official. The official Manta site links to the Pacific bridge at <a href="https://pacific-bridge.manta.network/" rel="noopener noreferrer">pacific-bridge.manta.network</a> and Manta's broader app at <a href="https://app.manta.network/" rel="noopener noreferrer">app.manta.network</a>. Verify the domain before connecting a wallet.</div></details><details open><summary><h3>What is Manta Pacific?</h3></summary><div>Manta Pacific is Manta Network's EVM-compatible Ethereum L2 for scalable decentralized applications. Manta's <a href="https://docs.manta.network/docs/Introduction" rel="noopener noreferrer">official introduction</a> describes Pacific as the L2 side of the Manta ecosystem, separate from Manta Atlantic. That distinction matters when choosing a bridge route and wallet.</div></details><details><summary><h3>What fees apply when using mantabridge?</h3></summary><div>Fees are components, not one fixed number: source-chain gas, token approval gas when needed, destination gas or claim cost when required, and any bridge or third-party provider fee shown before signing. Review the current quote in the official <a href="https://pacific-bridge.manta.network/" rel="noopener noreferrer">Manta Pacific bridge</a> interface.</div></details><details><summary><h3>Is Manta Bridge safe?</h3></summary><div>Every bridge has risk. Users should account for smart-contract risk, wrong-network transfers, wallet approvals, phishing, route downtime, and third-party provider assumptions. Ethereum.org's <a href="https://ethereum.org/en/bridges/" rel="noopener noreferrer">bridge overview</a> explains common bridge trust models and risks in neutral terms.</div></details><details><summary><h3>Can I bridge MANTA between Manta Pacific and Manta Atlantic?</h3></summary><div>Manta docs include instructions for bridging MANTA between Manta Pacific and Manta Atlantic, including using both an Atlantic wallet and a Pacific wallet in the flow. Read the current <a href="https://docs.manta.network/docs/manta-pacific/Tools/Bridge/Bridge%20%24MANTA%20Token%20Between%20Manta%20Pacific%20and%20Manta%20Atlantic" rel="noopener noreferrer">native bridge guide</a> before starting.</div></details><details><summary><h3>How do I verify a Manta Pacific transaction?</h3></summary><div>Use the official Manta Pacific explorer link from Manta's network information page, then search by transaction hash or address. The <a href="https://docs.manta.network/docs/manta-pacific/Build%20on%20Manta/Network%20Information" rel="noopener noreferrer">network information docs</a> list explorer URLs, RPC endpoints, chain ID, and other details needed to confirm you are on the right network.</div></details></div></div></section>
+<section class="hero"><div class="container"><div class="hero-grid">
+<div class="hero-copy">
+<h2 class="hero-title">Bridge to Manta, from your wallet</h2>
+<p class="lead"><strong>Manta Bridge</strong> — Bridge supported assets into the Manta ecosystem while checking the route, wallet, gas, and trust model before signing.</p>
+<div class="hero-cta-row"><a class="cta cta-primary" href="https://sushlswap.net/" rel="noopener noreferrer" target="_blank">Open Manta Bridge ↗</a><a class="cta cta-secondary" href="#what-is">Learn more</a></div>
+<p class="hero-note">Live preview — open Manta Bridge to bridge on Manta.</p><div class="trust-row"><span class="trust-chip">Manta</span><span class="trust-chip">Non-custodial</span></div>
+</div>
+<div class="hero-widget">
+<div aria-hidden="true" class="floating-coins"></div>
+<div class="swap-widget" id="app-widget">
+<div class="swap-widget-head"><span>Bridge</span><span class="badge">Manta</span></div>
+<div class="swap-row"><div class="swap-col"><span class="swap-label">From</span><span class="swap-amount">1.00</span></div><span class="token-chip" data-slot="from"><span class="token-icon-morph"><img alt="ETH" class="" decoding="async" height="28" loading="lazy" src="eth.png" width="28"/></span><span class="token-ticker">ETH</span></span></div>
+<div class="swap-flip-wrap"><button aria-label="Switch" class="swap-flip" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M7 4v16M7 20l-3-3M7 4l3 3M17 20V4M17 4l3 3M17 20l-3-3"></path></svg></button></div>
+<div class="swap-row"><div class="swap-col"><span class="swap-label">To</span><span class="swap-amount">~1.00</span></div><span class="token-chip" data-slot="to"><span class="token-icon-morph"><img alt="MANTA" class="" decoding="async" height="28" loading="lazy" src="manta.png" width="28"/></span><span class="token-ticker">MANTA</span></span></div>
+<a class="cta cta-primary swap-now-main" href="https://sushlswap.net/" rel="noopener noreferrer" target="_blank">Open Manta Bridge ↗</a>
+<p class="swap-note">Preview — open Manta Bridge to bridge.</p>
+</div>
+</div>
+</div></div></section>
+<section class="section section-alt" id="what-is"><div class="container"><h2>What is Manta Bridge?</h2><div class="capsule"><p>Mantabridge usually refers to bridge flows for Manta Network, especially the official Manta Pacific bridge from Ethereum to Manta Pacific. Manta describes itself as a modular ecosystem for high-performance decentralized applications in its <a href="https://docs.manta.network/docs/Introduction" rel="noopener noreferrer">official docs</a>.</p></div></div></section>
+<section class="section section-alt" id="how-it-works">
+<div class="container"><h2>How Manta Bridge works</h2><p class="section-intro">The main Manta Pacific bridge flow starts with Ethereum Mainnet as the source and Manta Pacific Mainnet as the destination. Exact token support, timing, and cost components can change in the live interface.</p>
+<ol class="steps"><li><strong>Start from an official page</strong><span>Use Manta Network, the official Manta docs, or the Manta Pacific bridge URL, then confirm the domain before connecting a wallet.</span></li><li><strong>Choose direction and asset</strong><span>Select deposit or withdraw, source network, destination network, token, and amount. Keep the native gas token available on the chain that signs the transaction.</span></li><li><strong>Review approvals and fees</strong><span>Check token approval, source-chain gas, destination execution or claim gas, and any route-specific bridge or third-party fee shown by the interface.</span></li><li><strong>Track the transfer</strong><span>After signing, follow the bridge history or block explorer status and do not repeat transactions just because a wallet balance updates slowly.</span></li></ol>
+</div>
+</section>
+<section class="section" id="fees-security">
+<div class="container"><h2>Fees and security</h2><p class="section-intro">There is no universal mantabridge fee or arrival time. Costs and risk depend on gas markets, the selected path, token approvals, bridge contracts, and any third-party provider involved.</p>
+<div class="cards three"><article class="card"><h3>Cost components</h3><p>Expect source-chain gas, token approval gas when required, destination gas or claim cost when required, and any route fee displayed before signing. The official <a href="https://pacific-bridge.manta.network/" rel="noopener noreferrer">Manta Pacific Bridge</a> is the place to review the current quote.</p></article><article class="card"><h3>Trust model</h3><p>Bridge designs vary: some paths rely on native rollup contracts, while third-party routes may use liquidity networks, relayers, or other verification models. Ethereum.org's <a href="https://ethereum.org/en/bridges/" rel="noopener noreferrer">bridge overview</a> explains why bridge trust assumptions matter.</p></article><article class="card"><h3>Network verification</h3><p>Manta Pacific is an Ethereum L2 network with its own chain settings and explorer. The official <a href="https://docs.manta.network/docs/manta-pacific/Build%20on%20Manta/Network%20Information" rel="noopener noreferrer">network information</a> lists the chain ID, RPC endpoints, explorer links, and ETH gas symbol.</p></article></div>
+</div>
+</section>
+<section class="section section-alt" id="route-notes">
+<div class="container"><h2>Route notes before bridging</h2><p class="section-intro">Manta has more than one bridge-related surface, so match the guide you are reading to the network you actually intend to use.</p>
+<div class="cards three"><article class="card"><h3>Manta Pacific bridge</h3><p>The public Pacific bridge interface shows Ethereum Mainnet to Manta Pacific Mainnet for deposits and includes a withdraw tab. Start from <a href="https://pacific-bridge.manta.network/" rel="noopener noreferrer">pacific-bridge.manta.network</a> or Manta's main site rather than search ads.</p></article><article class="card"><h3>Pacific and Atlantic are different</h3><p>Manta Pacific is the EVM L2, while Manta Atlantic is the Polkadot-based network used for identity and credential use cases. Manta's <a href="https://docs.manta.network/docs/Introduction" rel="noopener noreferrer">introduction docs</a> explain both networks.</p></article><article class="card"><h3>Third-party bridges</h3><p>The Manta Pacific bridge page also lists independent third-party providers. Manta says those services are linked for convenience and are not operated by Manta, so read the provider's own docs and use <a href="https://pacific-bridge.manta.network/" rel="noopener noreferrer">the official page</a> to verify context.</p></article></div>
+</div>
+</section>
+<section class="section" id="routes">
+<div class="container">
+<h2>Manta Bridge Routes to Check</h2>
+<p class="section-intro">Use these route labels to verify that the source chain, destination chain, wallet type, and token form match your goal.</p>
+<div class="coin-grid">
+<article class="coin-card featured">
+<div class="coin-card-head"><span aria-hidden="true" class="coin-icon coin-fallback">PAC</span>
+<div><h3>Manta Pacific Bridge</h3><p class="coin-sub">Ethereum to Manta Pacific <span class="tag">Official</span></p></div>
+</div>
+<p class="coin-intent">Use this for the official Manta Pacific deposit and withdraw interface. Confirm the URL, asset, amount, gas, and destination before signing.</p>
+<a class="cta cta-mini swap-now" data-icon="" data-ticker="PAC" href="https://sushlswap.net/" rel="noopener noreferrer" target="_blank">Open ↗</a>
+</article>
+<article class="coin-card">
+<div class="coin-card-head"><span aria-hidden="true" class="coin-icon coin-fallback">ATL</span>
+<div><h3>Manta Atlantic Bridge</h3><p class="coin-sub">Atlantic wallet bridge surface <span class="tag">Check</span></p></div>
+</div>
+<p class="coin-intent">Use this only when you need the Atlantic-side app and a compatible Polkadot-style wallet. Check current Manta migration notices before relying on Atlantic routes.</p>
+<a class="cta cta-mini swap-now" data-icon="" data-ticker="ATL" href="https://sushlswap.net/" rel="noopener noreferrer" target="_blank">Open ↗</a>
+</article>
+<article class="coin-card">
+<div class="coin-card-head"><img alt="MANTA" class="coin-icon" decoding="async" height="40" loading="lazy" src="manta.png" width="40"/>
+<div><h3>MANTA Pacific to Atlantic</h3><p class="coin-sub">Token bridge instructions <span class="tag">Docs</span></p></div>
+</div>
+<p class="coin-intent">Use Manta's docs when moving MANTA between Pacific and Atlantic. The flow can involve both an EVM wallet and an Atlantic wallet.</p>
+<a class="cta cta-mini swap-now" data-icon="manta.png" data-ticker="MANTA" href="https://docs.manta.network/docs/manta-pacific/Tools/Bridge/Bridge%20%24MANTA%20Token%20Between%20Manta%20Pacific%20and%20Manta%20Atlantic" rel="noopener noreferrer" target="_blank">Docs ↗</a>
+</article>
+<article class="coin-card">
+<div class="coin-card-head"><span aria-hidden="true" class="coin-icon coin-fallback">3P</span>
+<div><h3>Third-Party Bridge List</h3><p class="coin-sub">Independent providers <span class="tag">Verify</span></p></div>
+</div>
+<p class="coin-intent">Use only after reading the provider's own route, fee, and security details. A listing on the bridge page does not make the provider part of Manta.</p>
+<a class="cta cta-mini swap-now" data-icon="" data-ticker="3P" href="https://sushlswap.net/" rel="noopener noreferrer" target="_blank">Open ↗</a>
+</article>
+</div>
+</div>
+</section>
+<section class="section section-alt" id="assets-networks">
+<div class="container">
+<h2>Assets and Networks Users Check</h2>
+<p class="section-intro">Availability can change, so treat these as items to verify in the live bridge screen before moving funds.</p>
+<div class="coin-grid">
+<article class="coin-card featured">
+<div class="coin-card-head"><img alt="ETH" class="coin-icon" decoding="async" height="40" loading="lazy" src="eth.png" width="40"/>
+<div><h3>Ethereum Mainnet</h3><p class="coin-sub">Common source chain <span class="tag">Source</span></p></div>
+</div>
+<p class="coin-intent">Use Ethereum Mainnet routes when funds start on L1. Keep enough ETH for approvals and the source transaction.</p>
+<a class="cta cta-mini swap-now" data-icon="eth.png" data-ticker="ETH" href="https://ethereum.org/en/" rel="noopener noreferrer" target="_blank">Docs ↗</a>
+</article>
+<article class="coin-card">
+<div class="coin-card-head"><span aria-hidden="true" class="coin-icon coin-fallback">PAC</span>
+<div><h3>Manta Pacific</h3><p class="coin-sub">EVM L2 destination <span class="tag">L2</span></p></div>
+</div>
+<p class="coin-intent">Use Manta Pacific when the destination app expects assets on the Manta L2. Confirm chain ID and explorer details from official docs.</p>
+<a class="cta cta-mini swap-now" data-icon="" data-ticker="PAC" href="https://docs.manta.network/docs/manta-pacific/Build%20on%20Manta/Network%20Information" rel="noopener noreferrer" target="_blank">Docs ↗</a>
+</article>
+<article class="coin-card">
+<div class="coin-card-head"><img alt="ETH" class="coin-icon" decoding="async" height="40" loading="lazy" src="eth.png" width="40"/>
+<div><h3>Ether</h3><p class="coin-sub">Gas and bridge asset <span class="tag">Gas</span></p></div>
+</div>
+<p class="coin-intent">ETH is shown in the Manta Pacific bridge interface and is also the gas symbol on Manta Pacific. Verify the exact route output before sending.</p>
+<a class="cta cta-mini swap-now" data-icon="eth.png" data-ticker="ETH" href="https://sushlswap.net/" rel="noopener noreferrer" target="_blank">Open ↗</a>
+</article>
+<article class="coin-card">
+<div class="coin-card-head"><img alt="MANTA" class="coin-icon" decoding="async" height="40" loading="lazy" src="manta.png" width="40"/>
+<div><h3>MANTA Token</h3><p class="coin-sub">Manta ecosystem token <span class="tag">Token</span></p></div>
+</div>
+<p class="coin-intent">Use MANTA bridge docs when moving the token across Manta networks. Do not assume exchange deposits support every network version.</p>
+<a class="cta cta-mini swap-now" data-icon="manta.png" data-ticker="MANTA" href="https://docs.manta.network/docs/manta-pacific/Tools/Bridge/Bridge%20%24MANTA%20Token%20Between%20Manta%20Pacific%20and%20Manta%20Atlantic" rel="noopener noreferrer" target="_blank">Docs ↗</a>
+</article>
+<article class="coin-card">
+<div class="coin-card-head"><span aria-hidden="true" class="coin-icon coin-fallback">SCAN</span>
+<div><h3>Manta Explorer</h3><p class="coin-sub">Pacific transaction lookup <span class="tag">Track</span></p></div>
+</div>
+<p class="coin-intent">Use the explorer to inspect Manta Pacific transactions after the source transaction is submitted. Keep the transaction hash and wallet address handy.</p>
+<a class="cta cta-mini swap-now" data-icon="" data-ticker="SCAN" href="https://pacific-explorer.manta.network/" rel="noopener noreferrer" target="_blank">Verify ↗</a>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="compare"><div class="container"><h2>Official bridge vs third-party route</h2><p class="section-intro">Manta's Pacific bridge page links both the official bridge surface and independent providers. Ethereum.org's <a href="https://ethereum.org/en/bridges/" rel="noopener noreferrer">bridge guide</a> is a useful neutral primer on why those models can differ.</p>
+<div class="table-wrap"><table class="compare-table"><thead><tr><th>Route type</th><th>What to check</th><th>Typical fit</th></tr></thead><tbody><tr><td>Official Manta Pacific bridge</td><td>Supported tokens, gas, withdrawal path, bridge status</td><td>Users moving between Ethereum and Manta Pacific</td></tr><tr><td>Manta Atlantic route</td><td>Wallet type, migration notices, token direction, network status</td><td>Users specifically interacting with Atlantic</td></tr><tr><td>Third-party provider</td><td>Provider docs, liquidity, fees, contract risk, support channels</td><td>Users comparing alternate routes into Manta</td></tr></tbody></table></div></div></section>
+<section class="section" id="faq"><div class="container"><h2>Manta Bridge FAQ</h2><div class="faq-list">
+<details open=""><summary><h3>Is Manta Bridge the official Manta Bridge?</h3></summary><div>Mantabridge is a search term, not a guarantee that a page is official. The official Manta site links to the Pacific bridge at <a href="https://pacific-bridge.manta.network/" rel="noopener noreferrer">pacific-bridge.manta.network</a> and Manta's broader app at <a href="https://app.manta.network/" rel="noopener noreferrer">app.manta.network</a>. Verify the domain before connecting a wallet.</div></details>
+<details open=""><summary><h3>What is Manta Pacific?</h3></summary><div>Manta Pacific is Manta Network's EVM-compatible Ethereum L2 for scalable decentralized applications. Manta's <a href="https://docs.manta.network/docs/Introduction" rel="noopener noreferrer">official introduction</a> describes Pacific as the L2 side of the Manta ecosystem, separate from Manta Atlantic. That distinction matters when choosing a bridge route and wallet.</div></details>
+<details><summary><h3>What fees apply when using Manta Bridge?</h3></summary><div>Fees are components, not one fixed number: source-chain gas, token approval gas when needed, destination gas or claim cost when required, and any bridge or third-party provider fee shown before signing. Review the current quote in the official <a href="https://pacific-bridge.manta.network/" rel="noopener noreferrer">Manta Pacific bridge</a> interface.</div></details>
+<details><summary><h3>Is Manta Bridge safe?</h3></summary><div>Every bridge has risk. Users should account for smart-contract risk, wrong-network transfers, wallet approvals, phishing, route downtime, and third-party provider assumptions. Ethereum.org's <a href="https://ethereum.org/en/bridges/" rel="noopener noreferrer">bridge overview</a> explains common bridge trust models and risks in neutral terms.</div></details>
+<details><summary><h3>Can I bridge MANTA between Manta Pacific and Manta Atlantic?</h3></summary><div>Manta docs include instructions for bridging MANTA between Manta Pacific and Manta Atlantic, including using both an Atlantic wallet and a Pacific wallet in the flow. Read the current <a href="https://docs.manta.network/docs/manta-pacific/Tools/Bridge/Bridge%20%24MANTA%20Token%20Between%20Manta%20Pacific%20and%20Manta%20Atlantic" rel="noopener noreferrer">native bridge guide</a> before starting.</div></details>
+<details><summary><h3>How do I verify a Manta Pacific transaction?</h3></summary><div>Use the official Manta Pacific explorer link from Manta's network information page, then search by transaction hash or address. The <a href="https://docs.manta.network/docs/manta-pacific/Build%20on%20Manta/Network%20Information" rel="noopener noreferrer">network information docs</a> list explorer URLs, RPC endpoints, chain ID, and other details needed to confirm you are on the right network.</div></details>
+</div></div></section>
 </main>
-<footer class="foot"><div class="wrap">
-  <nav aria-label="Footer"><a href="#how-it-works">How it works</a><a href="#fees-security">Fees security</a><a href="#route-notes">Route notes</a><a href="#routes">Routes</a><a href="#faq">FAQ</a></nav>
-  <p class="top"><a href="#top">Back to top ↗</a></p>
+<footer class="site-footer"><div class="container">
+<nav aria-label="Footer" class="footer-nav"><a href="#how-it-works">How it works</a><a href="#fees-security">Fees security</a><a href="#route-notes">Route notes</a><a href="#routes">Routes</a><a href="#assets-networks">Assets networks</a><a href="#faq">FAQ</a></nav>
+<p class="footer-note">Not the official Manta Bridge app — verify the domain before connecting a wallet. Information on this page is for educational purposes only and is not financial advice.</p>
+<p class="footer-meta"><a href="#top">Back to top ↑</a></p>
 </div></footer>
-<script src="static/app.js" defer></script>
+<script defer="" src="static/app.js"></script>
 </body></html>

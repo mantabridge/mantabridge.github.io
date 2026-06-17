@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mantabridge.github.io/sitemap.xml
+Sitemap: INSERT_URL/sitemap.xml

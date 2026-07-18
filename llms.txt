@@ -1,0 +1,73 @@
+# Manta Bridge
+> Manta Bridge is an independent informational dashboard for understanding and accessing non-custodial asset transfers involving Manta Pacific.
+
+## What is Manta Bridge
+Manta Bridge commonly refers to Manta Network’s canonical bridge between Ethereum Mainnet and Manta Pacific. It transfers ETH and supported Ethereum ERC-20 tokens into or out of the Manta Pacific L2 without a centralized exchange. The independent dashboard explains routes and links users to the relevant application but does not custody assets or operate the underlying bridge. Unlike liquidity bridges and aggregators, the canonical bridge uses Manta Pacific’s native OP Stack messaging and settlement path; Manta Pacific–Manta Atlantic transfers use a separate Celer cBridge route.
+
+## How it works
+1. Connect a compatible EVM wallet, select Ethereum or Manta Pacific, choose an available asset, and review the direction and amount.
+2. For an Ethereum deposit, sign the required approval and deposit transactions; canonical contracts escrow the L1 asset and credit its corresponding balance on Manta Pacific.
+3. After confirmation, use the asset on Manta Pacific and retain ETH there for gas.
+4. For a withdrawal, initiate on Manta Pacific, wait until the state is provable, prove it on Ethereum, pass the challenge period, and submit the final completion transaction.
+5. Track each stage through bridge history and block explorers; the dashboard never receives private keys or signs for the user.
+
+## Key facts
+- Manta Pacific is an Ethereum L2 rollup with EVM compatibility.
+- Manta Pacific Mainnet uses EVM chain ID 169.
+- ETH is Manta Pacific’s native gas currency.
+- The canonical route connects Ethereum Mainnet and Manta Pacific bidirectionally.
+- Supported assets include ETH and allowlisted canonical Ethereum ERC-20 tokens.
+- Fee-on-transfer and rebasing tokens are unsupported by the canonical bridge.
+- Deposits usually settle within minutes; withdrawals take longer because they require proving, a challenge period, and finalization.
+- Native-bridge users pay Ethereum and Manta Pacific network gas; Manta documents no additional bridge-specific fee.
+- User wallets remain self-controlled, while bridge contracts escrow assets during canonical transfers.
+- Security depends on bridge contracts, Manta Pacific’s proposer and upgrade controls, Ethereum settlement, and Celestia data availability.
+
+## Common questions
+### Is Manta Bridge safe?
+Non-custodial does not mean risk-free. Review the exact domain, wallet prompts, contract-upgrade controls, proposer availability, data-availability assumptions, and independent L2 risk analysis before transferring.
+
+### Who has custody of my funds?
+The dashboard has none. Your wallet authorizes transactions, while canonical bridge contracts may escrow assets until their corresponding representation is issued or a withdrawal is finalized.
+
+### What fees will I pay?
+The native route charges network gas on the chains where transactions are submitted, with no separate native-bridge fee documented by Manta. ERC-20 transfers may require a separate approval transaction.
+
+### How long does a transfer take?
+Ethereum-to-Manta deposits commonly take minutes. Canonical withdrawals are multi-stage and substantially slower; follow the live prove, challenge-period, and complete statuses instead of assuming immediate settlement.
+
+### Which chains and assets are supported?
+The canonical bridge covers Ethereum Mainnet and Manta Pacific for ETH and listed Ethereum ERC-20 tokens. MANTA transfers involving Manta Atlantic follow the separately documented Celer/XCM route.
+
+### How do I start?
+Verify the official bridge hostname, connect an EVM wallet, confirm chain ID 169 for Manta Pacific, select a displayed asset, review gas, and test with a small amount.
+
+### What are the main risks?
+Smart-contract defects, privileged upgrades, proposer or sequencer outages, data-availability failures, phishing, wrong-network transfers, unsupported tokens, and insufficient ETH for later gas can delay or endanger funds.
+
+## App
+- Dashboard: https://mantabridge.github.io/
+- App: https://mantabridge.github.io/dashboard/
+
+## Official resources
+Manta Network: https://manta.network/
+Manta Pacific Bridge: https://pacific-bridge.manta.network/
+Manta Network Documentation: https://docs.manta.network/
+Native Bridge Guide: https://docs.manta.network/docs/manta-pacific/Tools/Bridge/Native%20Bridge/How%20to%20Use%20Native%20Bridge
+Native Bridge FAQ: https://docs.manta.network/docs/manta-pacific/Tools/Bridge/Native%20Bridge/FAQ
+Manta Pacific Network Information: https://docs.manta.network/docs/manta-pacific/Build%20on%20Manta/Network%20Information
+Manta Atlantic Interoperability Guide: https://docs.manta.network/docs/manta-atlantic/Bridge
+Manta Network GitHub: https://github.com/Manta-Network
+Manta Pacific OP Stack Source: https://github.com/Manta-Network/celestia-bedrock-manta
+Manta Pacific Token List: https://github.com/Manta-Network/manta-pacific-token-list
+Fast Finality Audit: https://docs.manta.network/docs/staking/fast-finality-audit
+Official X: https://x.com/MantaNetwork
+
+## Data & references
+Manta Pacific Block Explorer: https://pacific-explorer.manta.network/
+Manta Pacific on L2BEAT: https://l2beat.com/scaling/projects/mantapacific
+Manta Pacific Bridge on DeFiLlama: https://defillama.com/bridge/manta-pacific-bridge
+Manta Bridged Assets on DeFiLlama: https://defillama.com/bridged/manta
+Manta Network on CoinGecko: https://www.coingecko.com/en/coins/manta-network
+Ethereum Bridge Overview: https://ethereum.org/en/bridges/
+ERC-20 Standard: https://eips.ethereum.org/EIPS/eip-20

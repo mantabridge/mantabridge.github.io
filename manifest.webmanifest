@@ -1,0 +1,19 @@
+{
+  "name": "Manta Bridge",
+  "short_name": "Manta Bridge",
+  "description": "Manta Bridge explained: canonical Ethereum–Manta Pacific deposits, withdrawals, gas needs, fee structure, safety checks, and fixes for common stuck transactions.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "lang": "en",
+  "background_color": "#f5f6f8",
+  "theme_color": "#f5f6f8",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

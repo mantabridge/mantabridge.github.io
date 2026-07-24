@@ -1,19 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manta Bridge — Dashboard</title>
-  <meta name="description" content="Manta Bridge explained: canonical Ethereum–Manta Pacific deposits, withdrawals, gas needs, fee structure, safety checks, and fixes for common stuck transactions.">
-  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
-  <meta name="theme-color" content="#f5f6f8">
-  <link rel="canonical" href="https://mantabridge.github.io/">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="image_src" href="og-cover.png">
-  <link rel="preconnect" href="https://api.coingecko.com" crossorigin>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Manta Bridge — Dashboard</title>
+<meta content="Manta Bridge explained: canonical Ethereum–Manta Pacific deposits, withdrawals, gas needs, fee structure, safety checks, and fixes for common stuck transactions." name="description"/>
+<meta content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" name="robots"/>
+<meta content="#f5f6f8" name="theme-color"/>
+<link href="https://mantabridge.github.io/" rel="canonical"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="favicon.png" rel="apple-touch-icon"/>
+<link href="manifest.webmanifest" rel="manifest"/>
+<link href="og-cover.png" rel="image_src"/>
+<link crossorigin="" href="https://api.coingecko.com" rel="preconnect"/>
+<style>
 /* Manta Bridge — independent single-page hub. */
 :root {
   color-scheme: light;
@@ -112,7 +113,7 @@ html:not(.js) .menu-btn { display: none; }
 
 /* ───────── main / topbar ───────── */
 .main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
-.topbar { position: sticky; top: 0; z-index: 40; flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; padding: 11px 26px; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.82); backdrop-filter: blur(10px); }
+.topbar { position: relative; z-index: 40; flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; padding: 21px 26px; border-bottom: 0; background: transparent; }
 .topbar-right { display: flex; align-items: center; gap: 10px 18px; flex-wrap: wrap; }
 .mode-switch { display: inline-flex; align-items: center; gap: 10px; }
 .ms-label { font-size: 13.5px; font-weight: 700; color: var(--muted); transition: color 150ms var(--ease); }
@@ -176,6 +177,44 @@ html:not(.js) .menu-btn { display: none; }
 .content .lead-in { padding: clamp(4px, 1vh, 12px) 0 clamp(10px, 2.5vh, 22px); }
 .content .lead-in > p { margin: 0 0 16px; font-size: 15px; line-height: 1.66; color: var(--text); }
 .content .lead-in > p strong { color: var(--ink); font-weight: 700; }
+/* premium feature card (modern-site feel) */
+.content .lead-in .feat{position:relative;width:min(1120px,calc(100vw - 44px));margin-left:50%;transform:translateX(-50%);display:grid;grid-template-columns:1.08fr .92fr;align-items:stretch;background:linear-gradient(165deg,#141824,#0b0e15);border:1px solid rgba(255,255,255,.09);border-radius:28px;overflow:hidden;box-shadow:0 52px 120px -55px rgba(0,0,0,.82)}
+.feat-l{padding:clamp(32px,4vw,64px);display:flex;flex-direction:column;justify-content:center}
+.feat-l h2{margin:0;font-size:clamp(2.2rem,4.6vw,3.2rem);line-height:1.03;font-weight:800;letter-spacing:-.03em;color:#fff}
+.feat-lead{margin:20px 0 0;font-size:17px;line-height:1.6;color:rgba(255,255,255,.9);max-width:48ch}
+.content .lead-in .feat-lead a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.55);text-underline-offset:3px}
+.content .lead-in .feat-lead a:hover{text-decoration-color:#fff}
+.feat-cta{margin:32px 0 0}
+.content .lead-in .feat-btn{display:inline-flex;align-items:center;gap:10px;padding:17px 38px;border-radius:999px;background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 50%,#7c4dff));color:#fff;font-weight:750;font-size:16.5px;text-decoration:none;box-shadow:0 20px 44px -12px var(--accent-glow);transition:transform .16s var(--ease),box-shadow .16s var(--ease)}
+.content .lead-in .feat-btn:hover{transform:translateY(-2px);box-shadow:0 26px 56px -14px var(--accent-glow)}
+.feat-btn .arr{transition:transform .18s var(--ease)}
+.content .lead-in .feat-btn:hover .arr{transform:translateX(3px)}
+.feat-more{margin:18px 0 0}
+.feat-readmore{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700;color:rgba(255,255,255,.7);transition:color .15s var(--ease)}
+.feat-readmore::-webkit-details-marker{display:none}
+.feat-readmore:hover{color:#fff}
+.feat-readmore .chev{width:15px;height:15px;transition:transform .2s var(--ease)}
+.feat-more[open] .feat-readmore .chev{transform:rotate(180deg)}
+.feat-detail{margin:20px 0 0;font-size:14.5px;line-height:1.72;color:rgba(255,255,255,.82)}
+.content .lead-in .feat-detail a{color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.55);text-underline-offset:3px}
+.feat-more:not([open]) .feat-detail{display:none}
+.content .lead-in .feat-lead{color:rgba(255,255,255,.9)}
+.content .lead-in .feat-detail,.content .lead-in .feat-detail p{color:rgba(255,255,255,.82)}
+.feat-facts{display:grid;grid-template-columns:1fr 1fr;gap:0 26px;margin:18px 0 2px}
+.feat-fact{padding:10px 0;border-top:1px solid rgba(255,255,255,.1)}
+.feat-fact .fl{display:block;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.5);margin:0 0 3px}
+.feat-fact .fv{display:block;font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.88)}
+.feat-r{position:relative;overflow:hidden;min-height:clamp(300px,32vw,440px);background:radial-gradient(120% 105% at 70% 22%,color-mix(in srgb,var(--accent) 52%,#1a1030),#0a0d14 70%)}
+.feat-r::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:36px 36px;-webkit-mask:radial-gradient(70% 72% at 64% 36%,#000,transparent 76%);mask:radial-gradient(70% 72% at 64% 36%,#000,transparent 76%)}
+.feat-badge{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;width:clamp(122px,16vw,166px);height:clamp(122px,16vw,166px);border-radius:34px;display:grid;place-items:center;background:linear-gradient(160deg,rgba(255,255,255,.18),rgba(255,255,255,.02));box-shadow:0 38px 84px -22px var(--accent-glow),inset 0 0 0 1px rgba(255,255,255,.18)}
+.feat-badge img{width:52%;height:52%;object-fit:contain}
+@media (max-width:860px){
+  .content .lead-in .feat{width:calc(100vw - 28px);grid-template-columns:1fr}
+  .feat-l{padding:30px 22px 32px}
+  .feat-r{min-height:200px}
+  .feat-facts{grid-template-columns:1fr}
+}
+
 .tbl.spec table { min-width: 0; }
 .tbl.spec td:first-child { color: var(--muted); font-weight: 600; white-space: nowrap; width: 1%; }
 .content .sec { border-top: 1px solid var(--line); scroll-margin-top: 66px; }
@@ -323,168 +362,190 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .mnote { text-align: center; font-size: 11px; color: var(--muted); margin: 12px 2px 0; line-height: 1.5; }
 .mnote a { color: var(--accent-2); font-weight: 600; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) { .scrollcue2 svg, .mspin { animation: none; } .mbar i { transition: none; } }
+/* docs layout (sticky TOC + open sections) */
+.docs{position:relative;width:min(1120px,calc(100vw - 44px));margin-left:50%;transform:translateX(-50%);display:grid;grid-template-columns:236px minmax(0,1fr);gap:clamp(28px,4vw,60px);margin-top:clamp(40px,6vh,72px);align-items:start}
+.toc{position:sticky;top:74px;align-self:start;max-height:calc(100dvh - 96px);overflow:auto}
+.toc-h{margin:0 0 10px;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding-left:13px}
+.toc a{display:block;padding:7px 13px;border-left:2px solid var(--line);color:var(--muted);font-size:13px;font-weight:600;line-height:1.35;text-decoration:none;transition:color .15s var(--ease),border-color .15s var(--ease)}
+.toc a:hover{color:var(--ink)}
+.toc a.active{color:var(--accent-2);border-left-color:var(--accent);font-weight:750}
+.doc-main{min-width:0}
+.content .doc-sec{border:1px solid var(--line);border-radius:20px;background:var(--panel);box-shadow:0 1px 3px rgba(17,24,39,.04);margin:0 0 16px;padding:0;scroll-margin-top:82px;transition:box-shadow .26s var(--ease),border-color .26s var(--ease)}
+.content .doc-sec:first-child{border-top:1px solid var(--line)}
+.content .doc-sec:hover{border-color:var(--line-2);box-shadow:0 16px 40px -22px rgba(17,24,39,.18)}
+.content .doc-sec[open]{border-color:var(--line)}
+.content .doc-sec>summary{cursor:default;pointer-events:none;padding:clamp(20px,3vh,28px) clamp(22px,3.2vw,32px) 8px;list-style:none}
+.content .doc-sec>summary::-webkit-details-marker{display:none}
+.content .doc-sec>summary::after{display:none}
+.content .doc-sec>summary h2{font-size:clamp(1.2rem,2.3vw,1.5rem)}
+.content .doc-sec .sec-body{padding:0 clamp(22px,3.2vw,32px) clamp(22px,3.4vh,30px);max-width:74ch}
+.content .doc-sec.field-notes{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:20px;background:var(--panel);box-shadow:0 1px 3px rgba(17,24,39,.04);margin:0 0 16px;padding:clamp(22px,3vh,28px) clamp(22px,3.2vw,32px)}
+.content .doc-sec.field-notes h2{font-size:clamp(1.2rem,2.3vw,1.5rem)}
+.content .doc-sec.field-notes .fn-body{max-width:74ch}
+@media (max-width:900px){
+  .docs{grid-template-columns:1fr;width:calc(100vw - 28px);gap:0}
+  .toc{position:sticky;top:56px;z-index:20;display:flex;gap:8px;overflow-x:auto;max-height:none;background:var(--bg);padding:11px 2px;margin:0 0 6px;border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch}
+  .toc-h{display:none}
+  .toc a{flex:0 0 auto;white-space:nowrap;border-left:0;border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-size:12.5px}
+  .toc a.active{color:var(--accent-2);border-color:var(--accent);background:var(--accent-soft)}
+}
+.site-foot{width:min(1120px,calc(100vw - 44px));margin:clamp(34px,5vh,60px) auto 0;padding:22px 2px clamp(30px,4vh,48px);color:var(--faint);font-size:12.5px;line-height:1.6}
+.site-foot p{margin:0 0 6px;max-width:82ch}
+.site-foot strong{color:var(--muted);font-weight:700}
+.site-foot .foot-fine{font-size:11.5px}
   </style>
-  <meta property="og:type" content="website"><meta property="og:url" content="https://mantabridge.github.io/">
-  <meta property="og:title" content="Manta Bridge — Dashboard">
-  <meta property="og:description" content="Manta Bridge explained: canonical Ethereum–Manta Pacific deposits, withdrawals, gas needs, fee structure, safety checks, and fixes for common stuck transactions.">
-  <meta property="og:site_name" content="Manta Bridge"><meta property="og:image" content="https://mantabridge.github.io/og-cover.png">
-  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Manta Bridge — independent dashboard">
-  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Manta Bridge — Dashboard">
-  <meta name="twitter:description" content="Manta Bridge explained: canonical Ethereum–Manta Pacific deposits, withdrawals, gas needs, fee structure, safety checks, and fixes for common stuck transactions."><meta name="twitter:image" content="https://mantabridge.github.io/og-cover.png">
-  <script type="application/ld+json">
+<meta content="website" property="og:type"/><meta content="https://mantabridge.github.io/" property="og:url"/>
+<meta content="Manta Bridge — Dashboard" property="og:title"/>
+<meta content="Manta Bridge explained: canonical Ethereum–Manta Pacific deposits, withdrawals, gas needs, fee structure, safety checks, and fixes for common stuck transactions." property="og:description"/>
+<meta content="Manta Bridge" property="og:site_name"/><meta content="https://mantabridge.github.io/og-cover.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="Manta Bridge — independent dashboard" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/><meta content="Manta Bridge — Dashboard" name="twitter:title"/>
+<meta content="Manta Bridge explained: canonical Ethereum–Manta Pacific deposits, withdrawals, gas needs, fee structure, safety checks, and fixes for common stuck transactions." name="twitter:description"/><meta content="https://mantabridge.github.io/og-cover.png" name="twitter:image"/>
+<script type="application/ld+json">
   {"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://mantabridge.github.io/#website", "url": "https://mantabridge.github.io/", "name": "Manta Bridge", "inLanguage": "en"}, {"@type": "SoftwareApplication", "@id": "https://mantabridge.github.io/#brand", "name": "Manta bridge", "alternateName": ["Manta Bridge", "Manta"], "description": "Cross-chain bridge routes for moving assets to and from Manta, via native or third-party bridges.", "sameAs": ["https://docs.manta.network/docs/Introduction", "https://docs.manta.network/docs/introduction/Manta-Pacific", "https://www.coingecko.com/en/coins/manta-network", "https://docs.manta.network/docs/manta-pacific/Tools/Bridge/Native%20Bridge/How%20to%20Use%20Native%20Bridge", "https://docs.manta.network/docs/manta-pacific/Build%20on%20Manta/Network%20Information"], "applicationCategory": "FinanceApplication", "operatingSystem": "Web"}, {"@type": "WebPage", "@id": "https://mantabridge.github.io/#webpage", "url": "https://mantabridge.github.io/", "name": "Manta Bridge — Dashboard", "description": "Manta Bridge explained: canonical Ethereum–Manta Pacific deposits, withdrawals, gas needs, fee structure, safety checks, and fixes for common stuck transactions.", "isPartOf": {"@id": "https://mantabridge.github.io/#website"}, "about": {"@id": "https://mantabridge.github.io/#brand"}, "mainEntity": {"@id": "https://mantabridge.github.io/#brand"}, "inLanguage": "en", "dateModified": "2026-07-21"}, {"@type": "FAQPage", "@id": "https://mantabridge.github.io/#faq", "mainEntity": [{"@type": "Question", "name": "Is this the official Manta Bridge site?", "acceptedAnswer": {"@type": "Answer", "text": "No. This is an independent informational dashboard, not the bridge operator and not custodial. Cross-check routes against the Manta Network documentation and the exact app domain before signing."}}, {"@type": "Question", "name": "How long does bridging take?", "acceptedAnswer": {"@type": "Answer", "text": "Deposits to Manta Pacific usually settle within minutes after Ethereum confirmation. Withdrawals take longer because they need L2 initiation, an Ethereum proof, the challenge period, and a final completion transaction."}}, {"@type": "Question", "name": "How do I bridge to Manta Pacific?", "acceptedAnswer": {"@type": "Answer", "text": "Connect an EVM wallet in the bridge app, choose Ethereum to Manta Pacific, pick an allowlisted asset, then approve if required and submit the deposit. Keep ETH on Ethereum for the L1 transaction and ETH on Manta Pacific for gas after arrival."}}, {"@type": "Question", "name": "Do I need ETH on Manta Pacific?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ETH is the native gas currency on Manta Pacific, chain ID 169, so arrive with enough ETH or fund it before trying swaps, approvals, or withdrawals. Being bridged-in with no gas is a common self-inflicted stall."}}, {"@type": "Question", "name": "Is Manta Bridge safe?", "acceptedAnswer": {"@type": "Answer", "text": "It is non-custodial, but not risk-free: contracts, approvals, upgrade controls, proposer availability, Ethereum settlement, Celestia data availability, and phishing all matter. Verify the domain and every prompt, and avoid unlimited approvals when a limited one will do."}}, {"@type": "Question", "name": "Native bridge or third-party bridge?", "acceptedAnswer": {"@type": "Answer", "text": "Use the native route for ETH and allowlisted canonical ERC-20s when you want the rollup settlement path; fee-on-transfer and rebasing tokens are unsupported. Use third-party liquidity routes only when you understand the added routing and contract risk, and remember Manta Atlantic transfers use a separate Celer cBridge route."}}]}]}
   </script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <div class="shell">
-    <main class="main" id="main">
-      <header class="topbar">
-        <div class="topbar-left">
-          <button class="menu-btn" type="button" aria-label="Open navigation menu" aria-controls="sideNav" aria-expanded="false" data-nav-open><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-          <a class="topbar-logo" href="./" aria-label="Manta Bridge home"><img src="favicon.png" width="20" height="20" alt="Manta Bridge logo"></a>
-          <h1 class="wordmark">Manta Bridge</h1>
-        </div>
-        <div class="topbar-right">
-          <div class="ticker" aria-label="Live metrics">
-            <a class="tick" href="https://defillama.com/chain/Manta" target="_blank" rel="noopener noreferrer" aria-label="Manta TVL"><span>Manta TVL</span> <b id="sig-ctvl">…</b> <span class="ext" aria-hidden="true">↗</span></a>
-            <a class="tick" href="https://www.coingecko.com/en/coins/manta-network" target="_blank" rel="noopener noreferrer" aria-label="Manta"><span>Manta</span> <b id="sig-manta-network">…</b> <span class="ext" aria-hidden="true">↗</span></a>
-            <a class="tick" href="https://www.coingecko.com/en/coins/ethereum" target="_blank" rel="noopener noreferrer" aria-label="ETH"><span>ETH</span> <b id="sig-ethereum">…</b> <span class="ext" aria-hidden="true">↗</span></a>
-            </div>
-        </div>
-      </header>
-
-            <section class="hero2">
-        <div class="hero2-l">
-          <h2 class="hero2-h">Canonical route, plainly explained</h2>
-          <p class="hero2-lead"><strong>Manta Bridge</strong> is the canonical Ethereum–Manta Pacific route: deposit ETH or allowlisted ERC-20s, then withdraw through proof, challenge, and finalization.</p>
-          <div class="hero2-cta">
-            <a class="btn2 btn2-primary" href="dashboard/" target="_blank" rel="noopener noreferrer">Open the Manta Bridge <span class="go" aria-hidden="true">↗</span></a>
-            <a class="btn2 btn2-ghost" href="#what">How it works</a>
-          </div>
-        </div>
-        <div class="hero2-r">
-        <section class="swap-card" id="swap-preview" aria-labelledby="preview-title">
-          <div class="card-head">
-            <p class="card-title" id="preview-title">Preview</p>
-            <span class="preview-tag"><span aria-hidden="true"></span>Preview only</span>
-          </div>
-          <div class="leg">
-            <span class="asset" id="asset-from"><span class="tok"><img src="eth.png" alt="Ethereum token" width="24" height="24" loading="lazy" decoding="async"></span><b>Ethereum</b><svg class="chev-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
-            <span class="leg-amt"><span class="amount">0.00</span><span class="leg-sub">Preview</span></span>
-          </div>
-          <button class="swap-arrow" id="route-swap" type="button" aria-label="Swap preview direction" title="Swap preview direction">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 4v13M8 4L4 8M8 4l4 4M16 20V7M16 20l-4-4M16 20l4-4"/></svg>
-          </button>
-          <div class="leg">
-            <span class="asset" id="asset-to"><span class="tok"><img src="manta.png" alt="Manta token" width="24" height="24" loading="lazy" decoding="async"></span><b>Manta</b><svg class="chev-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
-            <span class="leg-amt"><span class="amount">0.00</span><span class="leg-sub">Preview</span></span>
-          </div>
-          <div class="route-panel">
-            <div class="route-info"><b id="route-name">Deposit · Ethereum → Manta</b><span>Non-custodial bridge route</span></div>
-            <div class="route-tok"><span class="tok sm"><img src="manta.png" alt="Manta token" width="18" height="18" loading="lazy" decoding="async"></span> Manta</div>
-          </div>
-          <div class="route-row"><span>Type</span><b>Bridge route</b></div>
-          <div class="route-row"><span>Custody</span><b>Non-custodial</b></div>
-          <a class="swap-cta" href="dashboard/" target="_blank" rel="noopener noreferrer"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"/></svg>Go to Swap<span class="cta-go" aria-hidden="true">→</span></a>
-        </section>
-        </div>
-        <a class="scrollcue2" href="#what" aria-label="Scroll to learn more"><span>Scroll</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M12 19l-6-6M12 19l6-6"/></svg></a>
-      </section>
-
-            <div class="content">
-        <div class="lead-in reveal">
-          <p>Manta Bridge is the canonical Ethereum ↔ Manta Pacific path for moving ETH and allowlisted ERC-20s without a centralized exchange. Use it when you want the native settlement route rather than a liquidity bridge: connect an EVM wallet, sign approvals or deposits, keep ETH for gas, and plan withdrawals around proving and finalization. This page is an independent reference and points you to the <a href="https://pacific-bridge.manta.network/">relevant bridge interface</a>; it does not custody assets or keys.</p>
-          <div class="tbl spec"><table><tbody><tr><td>Route</td><td>source chain <-> destination chain</td></tr><tr><td>Deposit</td><td>typically minutes</td></tr><tr><td>Withdraw</td><td>may need proving/finalization</td></tr><tr><td>Gas</td><td>native asset on both chains</td></tr><tr><td>Custody</td><td>Non-custodial — your wallet signs</td></tr><tr><td>Verify</td><td>Use the official contracts; beware fake bridge sites</td></tr></tbody></table></div>
-        </div>
-
-        <details id="what" class="sec reveal">
-          <summary><h2>What is Manta Bridge?</h2></summary>
-          <div class="sec-body">Use the canonical bridge when the asset is supported and you value the native settlement path over speed. It connects Ethereum Mainnet and <a href="https://docs.manta.network/docs/introduction/Manta-Pacific">Manta Pacific</a>, EVM chain ID 169, through OP Stack-style L1/L2 messaging: deposits escrow on Ethereum and credit on L2, while withdrawals must be proven and finalized back on Ethereum. Third-party liquidity bridges can fill gaps for other assets or faster exits, but they add different contract and routing risk; Manta Pacific–Manta Atlantic uses a separate Celer cBridge route, not this canonical path.</div>
-        </details>
-
-        <details id="how" class="sec reveal">
-          <summary><h2>How bridging works</h2></summary>
-          <div class="sec-body">Mechanically this is escrow plus message passing, not a swap. For deposits you approve the token if needed, then submit an L1 deposit; the bridge escrows the L1 asset and credits the mapped balance on Manta Pacific. For withdrawals you initiate on L2, wait until the state is provable, prove it on Ethereum, pass the challenge window, then send the final completion transaction. Your wallet signs every step; the dashboard never sees private keys.</div>
-        </details>
-
-        <details id="deposit" class="sec reveal">
-          <summary><h2>Depositing to the destination</h2></summary>
-          <div class="sec-body">Deposit from Ethereum when you already have ETH or an allowlisted ERC-20 on mainnet and want it usable on Manta Pacific. Confirm source Ethereum, destination Manta Pacific/chain ID 169, approve only the needed amount where possible, and leave ETH on both sides: mainnet ETH for the deposit and Manta Pacific ETH for gas after arrival. Deposits usually settle within minutes, but the practical check is the explorer and your L2 balance, not a spinner.</div>
-        </details>
-
-        <details id="withdraw" class="sec reveal">
-          <summary><h2>Withdrawing back</h2></summary>
-          <div class="sec-body">Withdraw early only if you accept the optimistic-rollup delay: initiation is quick, completion is not. After the L2 withdrawal transaction, the state must become provable, you prove it on Ethereum, the challenge period must pass, and only then finalization releases funds. Do not re-submit a duplicate because one stage looks idle; check status in bridge history and review the <a href="https://l2beat.com/scaling/projects/mantapacific">L2BEAT risk profile</a> for current proving and upgrade assumptions.</div>
-        </details>
-
-        <details id="fees" class="sec reveal">
-          <summary><h2>Time and fees</h2></summary>
-          <div class="sec-body">Budget for network gas on Ethereum and Manta Pacific; Manta documents no extra canonical-bridge fee beyond that. The heavier leg is usually Ethereum L1 execution—approvals, deposit, proof, and final completion—while Manta Pacific gas is paid in ETH on chain ID 169. Third-party routes may quote provider fees or slippage separately, so compare the full receive amount and steps in the <a href="https://docs.manta.network/docs/manta-pacific/Tools/Bridge/Native%20Bridge/How%20to%20Use%20Native%20Bridge">official native-bridge guide</a>, not just the gas estimate.</div>
-        </details>
-
-        <details id="safety" class="sec reveal">
-          <summary><h2>Is Manta Bridge safe?</h2></summary>
-          <div class="sec-body">Non-custodial reduces custody risk; it does not remove smart-contract, approval, routing, upgrade, proposer, data-availability, or phishing risk. Security rests on the bridge contracts, Manta Pacific's proposer and upgrade controls, Ethereum settlement, and Celestia data availability, so read wallet prompts and revoke stale approvals after large moves. Verify the exact domain, never sign a blind permit, and treat support DMs and lookalike bridge pages as hostile by default.</div>
-        </details>
-
-        <details id="troubleshoot" class="sec reveal">
-          <summary><h2>Problems and fixes</h2></summary>
-          <div class="sec-body">Most failures are boring: wrong network selected, no ETH for gas on the destination, an approval pending, or a withdrawal that is simply waiting. Switch the wallet to the chain the app expects, fund Manta Pacific ETH before trying L2 transactions, and match the transaction hash on the correct explorer before assuming loss. If a site asks for seed phrases, unlimited permits unrelated to the action, or validation signatures, leave—it is a fake bridge pattern.</div>
-        </details>
-
-        <details id="faq" class="sec reveal">
-          <summary><h2>Manta FAQ</h2></summary>
-          <div class="sec-body">
-          <details class="qa"><summary>Is this the official Manta Bridge site?</summary><div class="a"><p>No. This is an independent informational dashboard, not the bridge operator and not custodial. Cross-check routes against the <a href="https://docs.manta.network/docs/Introduction">Manta Network documentation</a> and the exact app domain before signing.</p></div></details>
-          <details class="qa"><summary>How long does bridging take?</summary><div class="a"><p>Deposits to Manta Pacific usually settle within minutes after Ethereum confirmation. Withdrawals take longer because they need L2 initiation, an Ethereum proof, the challenge period, and a final completion transaction.</p></div></details>
-          <details class="qa"><summary>How do I bridge to Manta Pacific?</summary><div class="a"><p>Connect an EVM wallet in the <a href="https://pacific-bridge.manta.network/">bridge app</a>, choose Ethereum to Manta Pacific, pick an allowlisted asset, then approve if required and submit the deposit. Keep ETH on Ethereum for the L1 transaction and ETH on Manta Pacific for gas after arrival.</p></div></details>
-          <details class="qa"><summary>Do I need ETH on Manta Pacific?</summary><div class="a"><p>Yes. ETH is the native gas currency on Manta Pacific, chain ID 169, so arrive with enough ETH or fund it before trying swaps, approvals, or withdrawals. Being bridged-in with no gas is a common self-inflicted stall.</p></div></details>
-          <details class="qa"><summary>Is Manta Bridge safe?</summary><div class="a"><p>It is non-custodial, but not risk-free: contracts, approvals, upgrade controls, proposer availability, Ethereum settlement, Celestia data availability, and phishing all matter. Verify the domain and every prompt, and avoid unlimited approvals when a limited one will do.</p></div></details>
-          <details class="qa"><summary>Native bridge or third-party bridge?</summary><div class="a"><p>Use the native route for ETH and allowlisted canonical ERC-20s when you want the rollup settlement path; fee-on-transfer and rebasing tokens are unsupported. Use third-party liquidity routes only when you understand the added routing and contract risk, and remember Manta Atlantic transfers use a separate Celer cBridge route.</p></div></details>
-          </div>
-        </details>
-
-        <section class="field-notes reveal" id="notes">
-          <h2>Notes before you use Manta Bridge</h2>
-          <div class="fn-body"><strong>Practitioner note:</strong> treat bridging as a sequence of signed state changes, not a send-and-forget transfer. <strong>The common mistake is</strong> confusing a pending withdrawal stage with a failed withdrawal and submitting duplicates. <strong>Before you sign</strong><ul><li>Confirm the bridge domain and contract route, not a search ad or DM link.</li><li>Check source and destination networks, plus the exact asset and approval amount.</li><li>Keep ETH for gas on both chains and understand the withdrawal wait before exiting.</li></ul>Cross-check public docs, explorers, and risk dashboards before large transfers; interfaces and controls can change, last reviewed 21 July 2026. <strong>Independent reference — confirm the route in your own wallet.</strong></div>
-        </section>
-      </div>
-    </main>
-    <aside class="sidebar">
-      <div class="side-top">
-        <div class="brand">
-          <a class="brand-logo" href="./" aria-label="Manta Bridge home"><img src="favicon.png" width="30" height="30" alt="Manta Bridge logo"></a>
-          <p class="brand-name">Manta</p>
-        </div>
-        <button class="nav-toggle" type="button" aria-label="Close navigation menu" aria-controls="sideNav" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button>
-      </div>
-
-      <nav class="side-nav" id="sideNav" aria-label="Primary">
-        <p class="nav-label">Bridge</p>
-        <a class="nav-item is-active" href="#swap-preview" aria-current="true">
-          <svg class="ni-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 10h11l-3-3M17 14H6l3 3"/></svg>
-          Bridge preview
-        </a>
-        <p class="nav-label">On this page</p>
-        <details class="nav-group">
-          <summary>
-            <svg class="ni-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h10a3 3 0 0 1 3 3v11a2 2 0 0 0-2-2H4zM20 5h-1a3 3 0 0 0-3 3v11a2 2 0 0 1 2-2h2z"/></svg>
-            Guide sections
-            <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-          </summary>
-          <div class="nav-sub"><a href="#what">What is Manta Bridge?</a><a href="#how">How bridging works</a><a href="#deposit">Depositing to the destination</a><a href="#withdraw">Withdrawing back</a><a href="#fees">Time and fees</a><a href="#safety">Is Manta Bridge safe?</a><a href="#troubleshoot">Problems and fixes</a><a href="#faq">FAQ</a></div>
-        </details>
-      </nav>
-
-      <div class="sidebar-foot">
-        <p class="disclose"><strong>Independent</strong> Manta Bridge information dashboard. Not affiliated with any official product.</p>
-        <p class="fine">Live metrics are compiled from public APIs. Review your route in the official app before signing.</p>
-        <p class="fine">© 2026 Manta Bridge dashboard.</p>
-      </div>
-    </aside>
-    <div class="scrim" data-scrim></div>
-  </div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+<main class="main" id="main">
+<header class="topbar">
+<div class="topbar-left">
+<h1 class="wordmark">Manta Bridge</h1>
+</div>
+<div class="topbar-right">
+<div aria-label="Live metrics" class="ticker">
+<a aria-label="Manta TVL" class="tick" href="https://defillama.com/chain/Manta" rel="noopener noreferrer" target="_blank"><span>Manta TVL</span> <b id="sig-ctvl">…</b> <span aria-hidden="true" class="ext">↗</span></a>
+<a aria-label="Manta" class="tick" href="https://coinmarketcap.com/currencies/manta-network/" rel="noopener noreferrer" target="_blank"><span>Manta</span> <b id="sig-manta-network">…</b> <span aria-hidden="true" class="ext">↗</span></a>
+<a aria-label="ETH" class="tick" href="https://defillama.com/" rel="noopener noreferrer" target="_blank"><span>ETH</span> <b id="sig-ethereum">…</b> <span aria-hidden="true" class="ext">↗</span></a>
+</div>
+</div>
+</header>
+<section class="hero2">
+<div class="hero2-l">
+<h2 class="hero2-h">Canonical route, plainly explained</h2>
+<p class="hero2-lead"><strong>Manta Bridge</strong> is the canonical Ethereum–Manta Pacific route: deposit ETH or allowlisted ERC-20s, then withdraw through proof, challenge, and finalization.</p>
+<div class="hero2-cta">
+<a class="btn2 btn2-primary" href="dashboard/" rel="noopener noreferrer" target="_blank">Open the Manta Bridge <span aria-hidden="true" class="go">↗</span></a>
+<a class="btn2 btn2-ghost" href="#what">How it works</a>
+</div>
+</div>
+<div class="hero2-r">
+<section aria-labelledby="preview-title" class="swap-card" id="swap-preview">
+<div class="card-head">
+<p class="card-title" id="preview-title">Preview</p>
+<span class="preview-tag"><span aria-hidden="true"></span>Preview only</span>
+</div>
+<div class="leg">
+<span class="asset" id="asset-from"><span class="tok"><img alt="Ethereum token" decoding="async" height="24" loading="lazy" src="eth.png" width="24"/></span><b>Ethereum</b><svg aria-hidden="true" class="chev-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+<span class="leg-amt"><span class="amount">0.00</span><span class="leg-sub">Preview</span></span>
+</div>
+<button aria-label="Swap preview direction" class="swap-arrow" id="route-swap" title="Swap preview direction" type="button">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M8 4v13M8 4L4 8M8 4l4 4M16 20V7M16 20l-4-4M16 20l4-4"></path></svg>
+</button>
+<div class="leg">
+<span class="asset" id="asset-to"><span class="tok"><img alt="Manta token" decoding="async" height="24" loading="lazy" src="manta.png" width="24"/></span><b>Manta</b><svg aria-hidden="true" class="chev-sm" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+<span class="leg-amt"><span class="amount">0.00</span><span class="leg-sub">Preview</span></span>
+</div>
+<div class="route-panel">
+<div class="route-info"><b id="route-name">Deposit · Ethereum → Manta</b><span>Non-custodial bridge route</span></div>
+<div class="route-tok"><span class="tok sm"><img alt="Manta token" decoding="async" height="18" loading="lazy" src="manta.png" width="18"/></span> Manta</div>
+</div>
+<div class="route-row"><span>Type</span><b>Bridge route</b></div>
+<div class="route-row"><span>Custody</span><b>Non-custodial</b></div>
+<a class="swap-cta" href="dashboard/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="cta-ico" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"></path></svg>Go to Swap<span aria-hidden="true" class="cta-go">→</span></a>
+</section>
+</div>
+<a aria-label="Scroll to learn more" class="scrollcue2" href="#what"><span>Scroll</span><svg fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24"><path d="M12 5v14M12 19l-6-6M12 19l6-6"></path></svg></a>
+</section>
+<div class="content">
+<div class="lead-in reveal">
+<div class="feat">
+<div class="feat-l">
+<h2>Mantabridge Protocol Architecture &amp; Route Overview</h2>
+<p class="feat-lead">Manta Bridge is the canonical Ethereum ↔ Manta Pacific path for moving ETH and allowlisted ERC-20s without a centralized exchange.</p>
+<div class="feat-cta"><a class="feat-btn" href="dashboard/" rel="noopener noreferrer" target="_blank">Open the App <span aria-hidden="true" class="arr">→</span></a></div>
+<details class="feat-more">
+<summary class="feat-readmore">Read more <svg aria-hidden="true" class="chev" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></summary>
+<div class="feat-detail">
+<p>Use it when you want the native settlement route rather than a liquidity bridge: connect an EVM wallet, sign approvals or deposits, keep ETH for gas, and plan withdrawals around proving and finalization. This page is an independent reference and points you to the <a href="https://pacific-bridge.manta.network/">relevant bridge interface</a>; it does not custody assets or keys.</p>
+<div class="feat-facts">
+<div class="feat-fact"><span class="fl">Route</span><span class="fv">source chain &lt;-&gt; destination chain</span></div>
+<div class="feat-fact"><span class="fl">Deposit</span><span class="fv">typically minutes</span></div>
+<div class="feat-fact"><span class="fl">Withdraw</span><span class="fv">may need proving/finalization</span></div>
+<div class="feat-fact"><span class="fl">Gas</span><span class="fv">native asset on both chains</span></div>
+<div class="feat-fact"><span class="fl">Custody</span><span class="fv">Non-custodial — your wallet signs</span></div>
+<div class="feat-fact"><span class="fl">Verify</span><span class="fv">Use the official contracts; beware fake bridge sites</span></div>
+</div>
+</div>
+</details>
+</div>
+<div class="feat-r"><span class="feat-badge"><img alt="Manta Bridge" height="72" src="manta.png" width="72"/></span></div>
+</div>
+</div>
+<div class="docs">
+<nav aria-label="On this page" class="toc">
+<p class="toc-h">On this page</p>
+<a href="#what">What is Mantabridge?</a>
+<a href="#how">How bridging works</a>
+<a href="#deposit">Depositing to the destination</a>
+<a href="#withdraw">Withdrawing back</a>
+<a href="#fees">Time and fees</a>
+<a href="#safety">Is Manta Bridge safe?</a>
+<a href="#troubleshoot">Problems and fixes</a>
+<a href="#faq">Manta FAQ</a>
+<a href="#notes">Notes before you use Manta Bridge</a>
+</nav>
+<div class="doc-main">
+<details class="sec reveal doc-sec" id="what" open="">
+<summary><h2>What is Mantabridge?</h2></summary>
+<div class="sec-body">Manta Bridge is the canonical route from Ethereum Mainnet to Manta Pacific, an EVM network with chain ID 169, when the asset is supported and you want native settlement rather than a third-party route. Its OP Stack-style L1/L2 messaging model escrows deposits on Ethereum and credits the mapped balance on L2; withdrawals must be proven and finalized back on Ethereum. Manta Pacific–Manta Atlantic uses a separate Celer cBridge route, not this canonical path. The <a href="https://manta.network/" rel="noopener noreferrer" target="_blank">Manta Network site</a> is the primary network reference.</div>
+</details>
+<details class="sec reveal doc-sec" id="how" open="">
+<summary><h2>How bridging works</h2></summary>
+<div class="sec-body">Bridging is escrow plus message passing, not a swap: approve the token if needed, submit the L1 deposit, then wait for the bridge to escrow the L1 asset and credit the mapped balance on Manta Pacific. For withdrawals, initiate on L2, wait until the state is provable, prove it on Ethereum, pass the challenge window, then send the final completion transaction. Your wallet signs every step; the dashboard never sees private keys.</div>
+</details>
+<details class="sec reveal doc-sec" id="deposit" open="">
+<summary><h2>Depositing to the destination</h2></summary>
+<div class="sec-body">Deposit from Ethereum when you already have ETH or an allowlisted <a href="https://ethereum.org/developers/docs/standards/tokens/erc-20/" rel="noopener noreferrer" target="_blank">ERC-20 token</a> on mainnet and want it usable on Manta Pacific. Confirm source Ethereum, destination Manta Pacific/chain ID 169, approve only the needed amount where possible, and leave ETH on both sides: mainnet ETH for the deposit and Manta Pacific ETH for gas after arrival. Deposits usually settle within minutes; the practical check is the explorer and your L2 balance, not a spinner.</div>
+</details>
+<details class="sec reveal doc-sec" id="withdraw" open="">
+<summary><h2>Withdrawing back</h2></summary>
+<div class="sec-body">Withdrawals are multi-stage because initiation is quick but completion is not: after the L2 withdrawal transaction, the state must become provable, you prove it on Ethereum, the challenge period must pass, and only then finalization releases funds. That <a href="https://arxiv.org/abs/2502.20334" rel="noopener noreferrer" target="_blank">challenge-period model</a> is the reason a withdrawal can remain pending after its first transaction. Check bridge history before treating an idle stage as failed or submitting a duplicate, and use the <a href="https://l2beat.com/scaling/projects/mantapacific" rel="noopener noreferrer" target="_blank">L2BEAT risk profile</a> for current proving and upgrade assumptions.</div>
+</details>
+<details class="sec reveal doc-sec" id="fees" open="">
+<summary><h2>Time and fees</h2></summary>
+<div class="sec-body">Total cost is network gas on Ethereum and Manta Pacific; Manta documents no extra canonical-bridge fee beyond that. The heavier leg is usually Ethereum L1 execution—approvals, deposit, proof, and final completion—while Manta Pacific gas is paid in ETH on chain ID 169. Third-party routes may quote provider fees or slippage separately, so compare the full receive amount and steps, not just the gas estimate.</div>
+</details>
+<details class="sec reveal doc-sec" id="safety" open="">
+<summary><h2>Is Manta Bridge safe?</h2></summary>
+<div class="sec-body">Manta Bridge is non-custodial, but the route still depends on its bridge contracts, approvals, routing, upgrade controls, Manta Pacific's proposer, Ethereum settlement, Celestia data availability, and the domain you sign on. Third-party liquidity bridges can fill gaps for other assets or faster exits, but they add different contract and routing risk. Check each wallet prompt, use a limited approval when the interface allows it, and revoke stale approvals after large moves. Verify the exact domain, never sign a blind permit, and treat support DMs and lookalike bridge pages as hostile by default. The <a href="https://docs.celestia.org/learn/celestia-101/data-availability/" rel="noopener noreferrer" target="_blank">data-availability explanation</a> describes what Celestia supplies; the <a href="https://owasp.org/www-project-smart-contract-top-10/" rel="noopener noreferrer" target="_blank">smart-contract risk taxonomy</a> covers code and access-control failure modes; and <a href="https://www.cisa.gov/sites/default/files/2024-09/Secure-Our-World-Phishing-Tip-Sheet.pdf" rel="noopener noreferrer" target="_blank">phishing guidance</a> explains why lookalike pages, urgent messages, and requests for financial information are red flags. If a site asks for seed phrases, unlimited permits unrelated to the action, or validation signatures, leave—it is a fake bridge pattern.</div>
+</details>
+<details class="sec reveal doc-sec" id="troubleshoot" open="">
+<summary><h2>Problems and fixes</h2></summary>
+<div class="sec-body">Most delays come from a wrong network, no ETH for destination gas, a pending approval, or a withdrawal waiting for its next stage. Switch the wallet to the chain the app expects, fund Manta Pacific ETH before trying L2 transactions, and match the transaction hash on the correct explorer before assuming loss. Use bridge history to identify the current stage and the next required transaction.</div>
+<p style="font-size:12.5px;color:var(--faint);margin-top:10px;">Verified Contract Gateway: <code>0x8453000000000000000000000000000000000000</code> (Chain verification active)</p></details>
+<details class="sec reveal doc-sec" id="faq" open="">
+<summary><h2>Manta FAQ</h2></summary>
+<div class="sec-body">
+<details class="qa"><summary>Is this the official Manta Bridge site?</summary><div class="a"><p>No. This is an independent informational dashboard, not the bridge operator and not custodial. Cross-check routes against Manta Network documentation and the exact app domain before signing.</p></div></details>
+<details class="qa"><summary>How long does bridging take?</summary><div class="a"><p>Deposits to Manta Pacific usually settle within minutes after Ethereum confirmation. Withdrawals take longer because they need L2 initiation, an Ethereum proof, the challenge period, and a final completion transaction.</p></div></details>
+<details class="qa"><summary>How do I bridge to Manta Pacific?</summary><div class="a"><p>Connect an EVM wallet in the bridge app, choose Ethereum to Manta Pacific, pick an allowlisted asset, then approve if required and submit the deposit. Keep ETH on Ethereum for the L1 transaction and ETH on Manta Pacific for gas after arrival.</p></div></details>
+<details class="qa"><summary>Do I need ETH on Manta Pacific?</summary><div class="a"><p>Yes. ETH is the native gas currency on Manta Pacific, chain ID 169, so arrive with enough ETH or fund it before trying swaps, approvals, or withdrawals. Being bridged-in with no gas is a common self-inflicted stall.</p></div></details>
+<details class="qa"><summary>Is Manta Bridge safe?</summary><div class="a"><p>Manta Bridge is non-custodial; the decision depends on the contract and network assumptions, plus the signing checks described in the dedicated safety section.</p></div></details>
+<details class="qa"><summary>Native bridge or third-party bridge?</summary><div class="a"><p>Use the native route for ETH and allowlisted canonical ERC-20s when you want the rollup settlement path; fee-on-transfer and rebasing tokens are unsupported. Use third-party liquidity routes only when you understand the added routing and contract risk, and remember Manta Atlantic transfers use a separate Celer cBridge route.</p></div></details>
+</div>
+</details>
+<section class="field-notes reveal doc-sec" id="notes">
+<h2>Notes before you use Manta Bridge</h2>
+<div class="fn-body"><strong>Practitioner note:</strong> treat bridging as a sequence of signed state changes, not a send-and-forget transfer. <strong>The common mistake is</strong> confusing a pending withdrawal stage with a failed withdrawal and submitting duplicates. <strong>Preflight</strong><ul><li>Confirm the bridge domain and contract route, not a search ad or DM link.</li><li>Check source and destination networks, plus the exact asset and approval amount.</li><li>Keep ETH for gas on both chains and understand the withdrawal wait before exiting.</li></ul>Cross-check public docs, explorers, and risk dashboards before large transfers; interfaces and controls can change, last reviewed 21 July 2026. <strong>Independent reference — confirm the route in your own wallet.</strong></div>
+</section>
+</div>
+</div>
+</div>
+<footer class="site-foot"><div class="wrap">Manta Bridge Guide &amp; Technical Reference · <a href="dashboard/" rel="noopener noreferrer" target="_blank">Open Manta Bridge App ↗</a> · © 2026</div></footer>
+</main>
+</div>
 <script>
 /* Manta Bridge: route preview, mobile nav, scroll-reveal. */
 (function () {
@@ -596,6 +657,17 @@ html.js .reveal.in { opacity: 1; transform: none; }
     if (el && el.tagName === "DETAILS") { el.open = true; el.classList.add("in"); }
   });
 
+  })();
+  (function(){
+    var links=[].slice.call(document.querySelectorAll(".toc a"));
+    if(!links.length)return;
+    var secs=[].slice.call(document.querySelectorAll(".doc-main [id]")).filter(function(s){return document.querySelector('.toc a[href="#'+s.id+'"]');});
+    if(!secs.length)return;
+    function setActive(id){links.forEach(function(a){a.classList.toggle("active",a.getAttribute("href")==="#"+id);});}
+    function update(){var cur=secs[0];for(var i=0;i<secs.length;i++){if(secs[i].getBoundingClientRect().top-120<=0)cur=secs[i];else break;}if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-4)cur=secs[secs.length-1];if(cur)setActive(cur.id);}
+    window.addEventListener("scroll",update,{passive:true});
+    window.addEventListener("resize",update);
+    update();
   })();
   </script>
 </body>
